@@ -24,7 +24,7 @@ public class MetodoPagoController {
     return metodoPagoService.getMetodoPagoById(id);
   }
 
-  @PostMapping
+  @PostMapping("/add")
   public MetodoPago addMetodoPago(@RequestBody MetodoPago metodoPago) {
     return metodoPagoService.addMetodoPago(metodoPago);
   }

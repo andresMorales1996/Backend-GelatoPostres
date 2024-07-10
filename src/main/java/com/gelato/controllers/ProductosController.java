@@ -18,7 +18,7 @@ public class ProductosController {
         return productosService.getAllProductos();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Productos addProducto(@RequestBody Productos categoria) {
         return productosService.addProducto(categoria);
     }

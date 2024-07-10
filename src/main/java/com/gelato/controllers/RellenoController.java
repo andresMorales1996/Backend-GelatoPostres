@@ -19,7 +19,7 @@ public class RellenoController {
         return rellenoService.getAllRelleno();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Relleno addRelleno(@RequestBody Relleno relleno) {
         return rellenoService.addRelleno(relleno);
     }
