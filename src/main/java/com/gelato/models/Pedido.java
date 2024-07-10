@@ -20,7 +20,7 @@ public class Pedido {
   @Column(name = "total_pedido", nullable = false)
   private int total_pedido;
   
-  @ManyToOne
+ /* @ManyToOne
   @JoinColumn(name = "ID_usuario", referencedColumnName = "ID_usuario", nullable = false)
-  private Usuario usuario;
+  private Usuario usuario;*/
 }

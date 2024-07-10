@@ -21,7 +21,7 @@ public class Ventas {
   @Column(name = "total_venta", nullable = false)
   private Double total_venta;
 
-  @OneToOne
+/*  @OneToOne
   @JoinColumn(name = "ID_metodo_pago", nullable = false)
   private MetodoPago metodoPago;
 
@@ -33,8 +33,8 @@ public class Ventas {
   @JoinColumn(name = "ID_estado_pago", nullable = false)
   private EstadoPago estadoPago;
 
-//  @OneToOne
-//  @JoinColumn(name = "ID_direcciones_entrega", nullable = false)
-//  private DireccionesEntrega direccionesEntrega;
+  @OneToOne
+  @JoinColumn(name = "ID_direcciones_entrega", nullable = false)
+  private DireccionesEntrega direccionesEntrega;*/
 
 }

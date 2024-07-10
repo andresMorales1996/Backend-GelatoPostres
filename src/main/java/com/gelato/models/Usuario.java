@@ -33,7 +33,7 @@ public class Usuario {
   @Column(name = "imagen_usuario")
   private byte[] imagen_usuario;
   
-  @OneToOne
+  /*@OneToOne
   @JoinColumn(name = "ID_rol", referencedColumnName = "ID_rol")
   private Rol rol;
   
@@ -41,5 +41,5 @@ public class Usuario {
   private List<Pedido> pedidos;
 
   @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-  private DireccionesEntrega direccionesEntrega;
+  private DireccionesEntrega direccionesEntrega;*/
 }

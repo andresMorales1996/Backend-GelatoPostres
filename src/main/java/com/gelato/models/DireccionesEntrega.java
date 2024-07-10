@@ -16,7 +16,7 @@ public class DireccionesEntrega {
   @Column(name = "direccion", nullable = false)
   private String direccion;
   
-  @OneToOne
+ /* @OneToOne
   @JoinColumn(name = "ID_usuario", referencedColumnName = "ID_usuario", nullable = false)
-  private Usuario usuario;
+  private Usuario usuario;*/
 }

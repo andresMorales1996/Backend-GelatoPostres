@@ -18,8 +18,8 @@ public class Sabor {
   @Column( name = "descripcion_sabor", nullable = false)
   private String descripcion_sabor;
 
-  @OneToOne
+ /* @OneToOne
   @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;
+  private Personalizar personalizar;*/
 }
 

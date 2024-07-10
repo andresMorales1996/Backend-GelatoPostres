@@ -23,29 +23,23 @@ public class Personalizar {
   @Column( name = "adicionales_personalizar")
   private String adicionales_personalizar;
 
-  //LLaves foraneas
+  //LLaves foranea
+ /* @OneToMany( mappedBy = "personalizar")
+  private List<Relleno> relleno = new ArrayList<>();
 
-//  @OneToMany( mappedBy = "personalizar")
-//  private List<Relleno> relleno = new ArrayList<>();
-//
-//  @OneToMany( mappedBy = "personalizar")
-//  private List<Porciones> porciones = new ArrayList<>();
+  @OneToMany( mappedBy = "personalizar")
+  private List<Porciones> porciones = new ArrayList<>();
 
   @OneToOne( mappedBy = "personalizar")
   private Glaseados glaseados;
 
   @OneToOne( mappedBy = "personalizar")
-  private Glaseados sabor;
+  private Sabor sabor;
 
   @OneToOne( mappedBy = "personalizar")
-  private Glaseados cobertura;
+  private Cobertura cobertura;
 
   @OneToOne( mappedBy = "personalizar")
-  private Glaseados toppings;
-
-
-
-
-
+  private Toppings toppings;*/
 
 }

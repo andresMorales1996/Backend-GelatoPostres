@@ -18,6 +18,6 @@ public class Categoria {
     @Column(name = "nombre_categoria", nullable = false)
     private String nombre_categoria;
 
-    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Productos productos;
+/*    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Productos productos;*/
 }

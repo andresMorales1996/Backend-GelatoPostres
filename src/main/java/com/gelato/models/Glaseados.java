@@ -19,7 +19,7 @@ public class Glaseados {
   @Column( name = "precio_glaseados", nullable = false)
   private double precio_glaseados;
 
-  @OneToOne
+  /*@OneToOne
   @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;
+  private Personalizar personalizar;*/
 }

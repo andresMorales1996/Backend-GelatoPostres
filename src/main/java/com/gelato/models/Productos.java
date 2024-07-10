@@ -29,7 +29,7 @@ public class Productos {
     @Lob()
     private byte[] imagen_producto;
 
-    @OneToOne
+   /* @OneToOne
     @JoinColumn(name = "ID_categoria", nullable = false)
     private Categoria categoria;
 
@@ -39,6 +39,6 @@ public class Productos {
 
     @OneToOne
     @JoinColumn(name = "ID_porciones", nullable = false)
-    private Porciones porciones;
+    private Porciones porciones;*/
 
 }

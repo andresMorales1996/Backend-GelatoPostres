@@ -16,7 +16,7 @@ public class Rol {
   @Column(name = "rol", nullable = false)
   private String rol;
   
-  @OneToOne(mappedBy = "rol")
-  private Usuario usuario;
+/*  @OneToOne(mappedBy = "rol")
+  private Usuario usuario;*/
 }
 
