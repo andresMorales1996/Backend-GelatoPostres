@@ -16,8 +16,11 @@ public class Cobertura {
   @Column( name = "nombre_cobertura", nullable = false)
   private String nombre_cobertura;
 
-  /*@OneToOne
+  @OneToOne
   @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;*/
+  private Personalizar personalizar;
+
+  @OneToOne(mappedBy = "cobertura", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+  private Personalizar personalizarCobertura;
 }
 

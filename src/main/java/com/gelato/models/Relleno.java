@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -18,10 +20,14 @@ public class Relleno {
     @Column(name = "nombre_relleno", nullable = false)
     private String nombre_relleno;
 
-   /* @OneToOne(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Productos productos;
 
     @ManyToOne
     @JoinColumn(name = "relleno_ID_relleno")
-    private Relleno relleno*/;
+    private Relleno relleno;
+
+    @OneToMany(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Personalizar> personalizar;
+
 }

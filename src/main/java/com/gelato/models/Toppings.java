@@ -16,7 +16,10 @@ public class Toppings {
   @Column( name = "nombre_topping", nullable = false)
   private String nombre_toppings;
 
-/*  @OneToOne
+  @OneToOne
   @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;*/
+  private Personalizar personalizar;
+
+  @OneToOne( mappedBy = "toppings")
+  private Personalizar personalizarToppings;
 }
