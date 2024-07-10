@@ -21,5 +21,8 @@ public class Sabor {
   @OneToOne
   @JoinColumn( name = "personalizar_id")
   private Personalizar personalizar;
+
+  @OneToOne( mappedBy = "sabor")
+  private Personalizar personalizarSabor;
 }
 

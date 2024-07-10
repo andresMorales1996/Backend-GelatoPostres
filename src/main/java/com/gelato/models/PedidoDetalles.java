@@ -17,6 +17,5 @@ public class PedidoDetalles {
   @Column(name = "cantidad", nullable = false)
   private int cantidad;
 
-  //Espacio para las Foreign Keys
 
 }

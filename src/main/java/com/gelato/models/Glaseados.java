@@ -22,4 +22,7 @@ public class Glaseados {
   @OneToOne
   @JoinColumn( name = "personalizar_id")
   private Personalizar personalizar;
+
+  @OneToOne( mappedBy = "glaseados")
+  private Personalizar personalizarGlaseados;
 }

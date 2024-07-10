@@ -19,4 +19,7 @@ public class Toppings {
   @OneToOne
   @JoinColumn( name = "personalizar_id")
   private Personalizar personalizar;
+
+  @OneToOne( mappedBy = "toppings")
+  private Personalizar personalizarToppings;
 }

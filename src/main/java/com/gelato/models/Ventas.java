@@ -33,8 +33,8 @@ public class Ventas {
   @JoinColumn(name = "ID_estado_pago", nullable = false)
   private EstadoPago estadoPago;
 
-//  @OneToOne
-//  @JoinColumn(name = "ID_direcciones_entrega", nullable = false)
-//  private DireccionesEntrega direccionesEntrega;
+  @OneToOne
+  @JoinColumn(name = "ID_direcciones_entrega", nullable = false)
+  private DireccionesEntrega direccionesEntrega;
 
 }
