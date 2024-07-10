@@ -3,16 +3,17 @@ package com.gelato.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "usuarios")
-
 public class Usuario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long ID_usuario;
+  private Long ID_usuario;
   
   @Column(name = "nombre_usuario", nullable = false)
   private String nombre_usuario;
@@ -30,12 +31,12 @@ public class Usuario {
   private String genero_usuario;
   
   @Column(name = "imagen_usuario")
-  private String imagen_usuario;
+  private byte[] imagen_usuario;
   
   @OneToOne
-  @MapsId("ID_rol")
-  @JoinColumn(name = "ID_rol")
+  @JoinColumn(name = "ID_rol", referencedColumnName = "ID_rol")
   private Rol rol;
   
-
+  @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Pedido> pedidos;
 }
