@@ -21,7 +21,7 @@ public class Relleno {
     @OneToOne(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Productos productos;
 
-    @ManyToOne
-    @JoinColumn(name = "relleno_ID_relleno")
-    private Relleno relleno;
+//    @ManyToOne
+//    @JoinColumn(name = "relleno_ID_relleno")
+//    private Relleno relleno;
 }

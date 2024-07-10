@@ -14,6 +14,6 @@ public class EstadoPago {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long ID_estado_pago;
 
-  @Column(name = "nombre_estado:pago", nullable = false)
+  @Column(name = "nombre_estado_pago", nullable = false)
   private String nombre_estado_pago;
 }

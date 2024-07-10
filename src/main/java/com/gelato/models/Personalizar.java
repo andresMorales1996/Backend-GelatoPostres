@@ -25,11 +25,11 @@ public class Personalizar {
 
   //LLaves foraneas
 
-  @OneToMany( mappedBy = "personalizar")
-  private List<Relleno> relleno = new ArrayList<>();
-
-  @OneToMany( mappedBy = "personalizar")
-  private List<Porciones> porciones = new ArrayList<>();
+//  @OneToMany( mappedBy = "personalizar")
+//  private List<Relleno> relleno = new ArrayList<>();
+//
+//  @OneToMany( mappedBy = "personalizar")
+//  private List<Porciones> porciones = new ArrayList<>();
 
   @OneToOne( mappedBy = "personalizar")
   private Glaseados glaseados;
