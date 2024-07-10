@@ -8,7 +8,6 @@ import lombok.*;
 @Data
 @Entity
 @Table(name = "direcciones_entrega")
-
 public class DireccionesEntrega {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
