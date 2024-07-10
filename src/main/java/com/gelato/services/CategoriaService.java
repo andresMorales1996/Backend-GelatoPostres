@@ -1,7 +1,6 @@
 package com.gelato.services;
 
 import com.gelato.models.Categoria;
-import com.gelato.models.Productos;
 import com.gelato.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +14,11 @@ public class CategoriaService {
     private CategoriaRepository categoriaRepository;
 
     // Obtener todas las categorias existentes
-    private List<Categoria> getAllCategoria(){
+    public List<Categoria> getAllCategoria(){
         return categoriaRepository.findAll();
     }
     // Crear categoria
-    private Categoria addCategoria(Categoria categoria){
+    public Categoria addCategoria(Categoria categoria){
         return categoriaRepository.save(categoria);
     }
     // Eliminar categoria
@@ -31,4 +30,13 @@ public class CategoriaService {
         return categoriaRepository.findById(id).orElse(null);
     }
     // Actualizar una categoria
+    public Categoria updateCategoria(Long id, Categoria updateCategoria){
+        Categoria categoria = findCategoria(id);
+        if(categoria != null){
+            categoria.setNombre_categoria(updateCategoria.getNombre_categoria());
+            return categoriaRepository.save(categoria);
+        } else {
+            return null;
+        }
+    }
 }

@@ -13,11 +13,15 @@ import lombok.NoArgsConstructor;
 public class Relleno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_relleno;
+    private Long ID_relleno;
 
     @Column(name = "nombre_relleno", nullable = false)
     private String nombre_relleno;
 
     @OneToOne(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Productos productos;
+
+    @ManyToOne
+    @JoinColumn(name = "relleno_ID_relleno")
+    private Relleno relleno;
 }

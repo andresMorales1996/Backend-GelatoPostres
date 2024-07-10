@@ -1,7 +1,6 @@
 package com.gelato.services;
 
 import com.gelato.models.Productos;
-import com.gelato.repositories.CategoriaRepository;
 import com.gelato.repositories.ProductosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +14,11 @@ public class ProductosService {
     private ProductosRepository productosRepository;
 
     // Obtener todos los productos
-    private List<Productos> getAllProductos(){
+    public List<Productos> getAllProductos(){
         return productosRepository.findAll();
     }
     // Crear producto
-    public Productos addCliente(Productos productos){
+    public Productos addProducto(Productos productos){
         return productosRepository.save(productos);
     }
     // Eliminar producto

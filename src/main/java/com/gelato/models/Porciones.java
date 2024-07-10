@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Porciones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_porciones;
+    private Long ID_porciones;
 
     @Column(name = "porcion", nullable = false)
     private int porcion;
@@ -23,4 +23,8 @@ public class Porciones {
 
     @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Productos productos;
+
+    @ManyToOne
+    @JoinColumn(name = "porciones_ID_porciones")
+    private Porciones porciones;
 }

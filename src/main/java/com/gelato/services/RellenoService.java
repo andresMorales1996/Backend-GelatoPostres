@@ -1,8 +1,7 @@
 package com.gelato.services;
 
-import com.gelato.models.Categoria;
+
 import com.gelato.models.Relleno;
-import com.gelato.repositories.CategoriaRepository;
 import com.gelato.repositories.RellenoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +15,11 @@ public class RellenoService {
     private RellenoRepository rellenoRepository;
 
     // Obtener todos los rellenos existentes
-    private List<Relleno> getAllRelleno(){
+    public List<Relleno> getAllRelleno(){
         return rellenoRepository.findAll();
     }
     // Crear relleno
-    private Relleno addRelleno(Relleno relleno){
+    public Relleno addRelleno(Relleno relleno){
         return rellenoRepository.save(relleno);
     }
     // Eliminar relleno
@@ -32,4 +31,13 @@ public class RellenoService {
         return rellenoRepository.findById(id).orElse(null);
     }
     // Actualizar un relleno
+    public Relleno updateRelleno(Long id, Relleno updateRelleno){
+        Relleno rellenos = findRelleno(id);
+        if(rellenos != null){
+            rellenos.setNombre_relleno(updateRelleno.getNombre_relleno());
+            return rellenoRepository.save(rellenos);
+        } else {
+            return null;
+        }
+    }
 }
