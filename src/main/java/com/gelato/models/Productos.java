@@ -30,15 +30,15 @@ public class Productos {
     private byte[] imagen_producto;
 
     @OneToOne
-    @JoinColumn(name = "ID_categoria", nullable = false)
+    @JoinColumn(name = "categoria_ID_categoria", nullable = false)
     private Categoria categoria;
 
     @OneToOne
-    @JoinColumn(name = "ID_relleno", nullable = false)
+    @JoinColumn(name = "relleno_ID_relleno", nullable = false)
     private Relleno relleno;
 
     @OneToOne
-    @JoinColumn(name = "ID_porciones", nullable = false)
+    @JoinColumn(name = "porciones_ID_porciones", nullable = false)
     private Porciones porciones;
 
 }
