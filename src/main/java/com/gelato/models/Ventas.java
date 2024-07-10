@@ -13,7 +13,7 @@ import java.util.Date;
 public class Ventas {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long ID_venta;
+  private Long ID_venta;
 
   @Column(name = "fecha", nullable = false )
   private Date fecha;
@@ -21,6 +21,20 @@ public class Ventas {
   @Column(name = "total_venta", nullable = false)
   private Double total_venta;
 
-  /* Espacio para las foreign keys */
+  @OneToOne
+  @JoinColumn(name = "ID_metodo_pago", nullable = false)
+  private MetodoPago metodoPago;
+
+  @OneToOne
+  @JoinColumn(name = "ID_pedido_detalles", nullable = false)
+  private PedidoDetalles pedidoDetalles;
+
+  @OneToOne
+  @JoinColumn(name = "ID_estado_pago", nullable = false)
+  private EstadoPago estadoPago;
+
+//  @OneToOne
+//  @JoinColumn(name = "ID_direcciones_entrega", nullable = false)
+//  private DireccionesEntrega direccionesEntrega;
 
 }
