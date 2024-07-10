@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Porciones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_porciones;
+    private Long ID_porciones;
 
     @Column(name = "porcion", nullable = false)
     private int porcion;

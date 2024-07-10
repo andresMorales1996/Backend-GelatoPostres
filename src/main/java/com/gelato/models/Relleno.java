@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Relleno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_relleno;
+    private Long ID_relleno;
 
     @Column(name = "nombre_relleno", nullable = false)
     private String nombre_relleno;
