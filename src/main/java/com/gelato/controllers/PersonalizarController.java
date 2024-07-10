@@ -8,34 +8,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/personalizar")
+@RequestMapping("/personalizar/v1")
 public class PersonalizarController {
 
-    @Autowired
-    private PersonalizarService personalizar;
+  @Autowired
+  private PersonalizarService personalizarService;
 
-    @GetMapping
-    public List<Personalizar> getAllPersonalizar() {
-      return PersonalizarService.getAllPersonalizar();
-    }
 
-    @GetMapping("/{id}")
-    public Personalizar getPersonalizarById(@PathVariable Long id) {
-      return PersonalizarService.getPersonalizarById(id);
-    }
+  @PostMapping("/crearpersonalizar")
+  public Personalizar addPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
+    return  personalizarService.addPersonalizar(nuevoPersonalizar);
+  }
+  @GetMapping("/todoslospersonalizar")
+  public List<Personalizar> getAllPersonalizar(){
+    return  personalizarService.getAllPersonalizar();
+  }
 
-    @PostMapping
-    public Personalizar addPersonalizar(@RequestBody Personalizar Personalizar) {
-      return PersonalizarService.addPersonalizar(Personalizar);
-    }
+  @GetMapping("/personalizar/{id}")
+  public Personalizar getPersonalizar(@PathVariable Long id){
+    return personalizarService.getPersonalizar(id);
+  }
 
-    @PutMapping("/{id}")
-    public Personalizar updatePersonalizar(@PathVariable Long id, @RequestBody Personalizar PersonalizarDetails) {
-      return PersonalizarService.updatePersonalizar(id, PersonalizarDetails);
-    }
+  @DeleteMapping("/deletepersonalizar/{id}")
+  public void deletePersonalizar(@PathVariable Long id){
+    personalizarService.deletePersonalizar(id);
+  }
 
-    @DeleteMapping("/{id}")
-    public void deletePersonalizar(@PathVariable Long id) {
-      PersonalizarService.deletePersonalizar(id);
-    }
-  }}
+  @PutMapping("/actualizarpersonalizar/{id}")
+  public Personalizar updatePersonalizar(@PathVariable Long id, @RequestBody Personalizar actualizado) {
+    return personalizarService.updateProducto(id,actualizado);
+  }
+
+}
