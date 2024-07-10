@@ -17,5 +17,16 @@ public class PedidoDetalles {
   @Column(name = "cantidad", nullable = false)
   private int cantidad;
 
+  @OneToOne
+  @JoinColumn(name = "ID_pedido", nullable = false)
+  private Pedido pedido;
+
+  @OneToOne
+  @JoinColumn(name = "ID_estado_pago", nullable = false)
+  private EstadoPago estadoPago;
+
+  @OneToOne
+  @JoinColumn(name = "ID_producto", nullable = false)
+  private Productos producto;
 
 }
