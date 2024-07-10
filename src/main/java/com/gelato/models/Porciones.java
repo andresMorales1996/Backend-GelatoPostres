@@ -23,4 +23,8 @@ public class Porciones {
 
     @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Productos productos;
+
+    @ManyToOne
+    @JoinColumn(name = "porciones_ID_porciones")
+    private Porciones porciones;
 }
