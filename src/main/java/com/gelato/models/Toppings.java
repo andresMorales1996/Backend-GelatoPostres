@@ -29,4 +29,8 @@ public class Toppings {
 //
 //  @OneToOne( mappedBy = "toppings")
 //  private Personalizar personalizarToppings;
+
+//  @OneToOne(fetch = FetchType.LAZY)
+//  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
+//  private Personalizar personalizar;
 }

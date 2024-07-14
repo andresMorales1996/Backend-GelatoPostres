@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,6 +23,9 @@ public class Porciones {
   @Column(name = "precio_porciones", nullable = false)
   private int precio_porciones;
 
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
+//    private Personalizar personalizar;
   //  RELACIONES
 //    @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 //    private Productos productos;

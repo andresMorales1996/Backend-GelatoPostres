@@ -30,6 +30,11 @@ public class Productos {
   @Lob()
   private byte[] imagen_producto;
 
+
+
+
+  
+
   //  RELACIONES
 //    @OneToOne
 //    @JoinColumn(name = "ID_categoria", nullable = false)
@@ -42,5 +47,8 @@ public class Productos {
 //    @OneToOne
 //    @JoinColumn(name = "ID_porciones", nullable = false)
 //    private Porciones porciones;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "ID_categoria", nullable = false)
+    // private Categoria categoria;
 
 }
