@@ -1,7 +1,7 @@
 package com.gelato.services;
 
-import com.gelato.models.MetodoPago;
-import com.gelato.repositories.MetodoPagoRepository;
+import com.gelato.models.MetodoPagos;
+import com.gelato.repositories.MetodoPagosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,30 +11,30 @@ import java.util.List;
 public class MetodoPagoService {
 
   @Autowired
-  private MetodoPagoRepository metodoPagoRepository;
+  private MetodoPagosRepository metodoPagosRepository;
 
-  public List<MetodoPago> getAllMetodosPago() {
-    return metodoPagoRepository.findAll();
+  public List<MetodoPagos> getAllMetodosPago() {
+    return metodoPagosRepository.findAll();
   }
 
-  public MetodoPago getMetodoPagoById(Long id) {
-    return metodoPagoRepository.findById(id).orElse(null);
+  public MetodoPagos getMetodoPagoById(Long id) {
+    return metodoPagosRepository.findById(id).orElse(null);
   }
 
-  public MetodoPago addMetodoPago(MetodoPago metodoPago) {
-    return metodoPagoRepository.save(metodoPago);
+  public MetodoPagos addMetodoPago(MetodoPagos metodoPagos) {
+    return metodoPagosRepository.save(metodoPagos);
   }
 
-  public MetodoPago updateMetodoPago(Long id, MetodoPago metodoPagoDetails) {
-    MetodoPago metodoPago = metodoPagoRepository.findById(id).orElse(null);
-    if (metodoPago != null) {
-      metodoPago.setNombre_metodo_pago(metodoPagoDetails.getNombre_metodo_pago());
-      return metodoPagoRepository.save(metodoPago);
+  public MetodoPagos updateMetodoPago(Long id, MetodoPagos metodoPagosDetails) {
+    MetodoPagos metodoPagos = metodoPagosRepository.findById(id).orElse(null);
+    if (metodoPagos != null) {
+      metodoPagos.setNombre_metodo_pago(metodoPagosDetails.getNombre_metodo_pago());
+      return metodoPagosRepository.save(metodoPagos);
     }
     return null;
   }
 
   public void deleteMetodoPago(Long id) {
-    metodoPagoRepository.deleteById(id);
+    metodoPagosRepository.deleteById(id);
   }
 }

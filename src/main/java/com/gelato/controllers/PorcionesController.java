@@ -1,8 +1,6 @@
 package com.gelato.controllers;
 
-import com.gelato.models.Categoria;
 import com.gelato.models.Porciones;
-import com.gelato.services.CategoriaService;
 import com.gelato.services.PorcionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,32 +8,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/porciones")
+@RequestMapping("/porciones/v1")
 public class PorcionesController {
+
     @Autowired
     private PorcionesService porcionesService;
-    @GetMapping
+
+    @GetMapping("/allPorciones")
     public List<Porciones> getAllPorciones() {
         return porcionesService.getAllPorciones();
     }
 
-    @PostMapping
-    public Porciones addPorciones(@RequestBody Porciones porciones) {
-        return porcionesService.addPorciones(porciones);
+    @GetMapping("/porcion/{id}")
+    public Porciones getPorcion(@PathVariable Long id){
+        return porcionesService.getPorcion(id);
     }
 
-    @DeleteMapping("/{id}")
-    public void deletePorciones(@PathVariable Long id){
-        porcionesService.deletePorciones(id);
+    @PostMapping("/createPorcion")
+    public Porciones addPorcion(@RequestBody Porciones porciones) {
+        return porcionesService.addPorcion(porciones);
     }
 
-    @GetMapping("/{id}")
-    public Porciones findPorciones(@PathVariable Long id){
-        return porcionesService.findPorciones(id);
+    @PutMapping("/updatePorcion/{id}")
+    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
+        return porcionesService.updatePorcion(id, porciones);
     }
 
-    @PutMapping("/{id}")
-    public Porciones updatePorciones(@PathVariable Long id, @RequestBody Porciones porciones) {
-        return porcionesService.updatePorciones(id, porciones);
+    @DeleteMapping("/deletePorcion/{id}")
+    public void deletePorcion(@PathVariable Long id){
+        porcionesService.deletePorcion(id);
     }
+
 }
