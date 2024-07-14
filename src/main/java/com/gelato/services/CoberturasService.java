@@ -14,7 +14,7 @@ public class CoberturasService {
   @Autowired
   private CoberturasRepository coberturasRepository;
 
-  // metodo para mostar todos los Cobertura
+  // metodo para mostrar todos los Cobertura
   public List<Coberturas> getAllCoberturas(){
     return  coberturasRepository.findAll();
   }

@@ -15,7 +15,7 @@ public class CoberturasController {
   private CoberturasService coberturasService;
 
   @GetMapping("/allCoberturas")
-  public List<Coberturas> getAllCobertura(){
+  public List<Coberturas> getAllCoberturas(){
     return  coberturasService.getAllCoberturas();
   }
 
