@@ -1,8 +1,6 @@
 package com.gelato.controllers;
 
-import com.gelato.models.Categoria;
 import com.gelato.models.Porciones;
-import com.gelato.services.CategoriaService;
 import com.gelato.services.PorcionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
