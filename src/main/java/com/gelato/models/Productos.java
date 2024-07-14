@@ -11,34 +11,36 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "productos")
 public class Productos {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID_producto;
 
-    @Column(name = "nombre_producto", nullable = false)
-    private String nombre_producto;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long ID_producto;
 
-    @Column(name = "descripcion_producto", nullable = false)
-    private String descripcion_producto;
+  @Column(name = "nombre_producto", nullable = false)
+  private String nombre_producto;
 
-    @Column(name = "disponibilidad", nullable = false)
-    private Boolean disponibilidad;
+  @Column(name = "descripcion_producto", nullable = false)
+  private String descripcion_producto;
 
-    @Column(name = "imagen_producto", nullable = false)
-    @Basic(optional = false, fetch = FetchType.EAGER)
-    @Lob()
-    private byte[] imagen_producto;
+  @Column(name = "disponibilidad", nullable = false)
+  private Boolean disponibilidad;
 
-   /* @OneToOne
-    @JoinColumn(name = "ID_categoria", nullable = false)
-    private Categoria categoria;
+  @Column(name = "imagen_producto", nullable = false)
+  @Basic(optional = false, fetch = FetchType.EAGER)
+  @Lob()
+  private byte[] imagen_producto;
 
-    @OneToOne
-    @JoinColumn(name = "ID_relleno", nullable = false)
-    private Relleno relleno;
-
-    @OneToOne
-    @JoinColumn(name = "ID_porciones", nullable = false)
-    private Porciones porciones;*/
+  //  RELACIONES
+//    @OneToOne
+//    @JoinColumn(name = "ID_categoria", nullable = false)
+//    private Categoria categoria;
+//
+//    @OneToOne
+//    @JoinColumn(name = "ID_relleno", nullable = false)
+//    private Relleno relleno;
+//
+//    @OneToOne
+//    @JoinColumn(name = "ID_porciones", nullable = false)
+//    private Porciones porciones;
 
 }

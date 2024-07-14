@@ -14,35 +14,36 @@ public class ToppingsService {
   @Autowired
   private ToppingsRepository toppingsRepository;
 
-  //Agregar nuevo Toppings
-  public Toppings addToppings(Toppings nuevoToppings){
-    return toppingsRepository.save(nuevoToppings);
-  }
-
   // metodo para mostar todos los Toppings
   public List<Toppings> getAllToppings(){
     return  toppingsRepository.findAll();
   }
 
-  // metodo para mostar una Topping en especifico y ver si existe
+  // metodo para mostar un Topping en especifico y ver si existe
   public Toppings getToppings(Long id){
     return  toppingsRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Topping no encontrado, intente con otro"));
   }
 
-  // metodo para eliminar un Topping
-  public void deleteToppings(Long id){
-    Toppings eliminar =  toppingsRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Topping no encontrado, no es posible eliminarlo"));
-    toppingsRepository.delete(eliminar);
+  //Agregar nuevo Toppings
+  public Toppings addTopping(Toppings nuevoTopping){
+    return toppingsRepository.save(nuevoTopping);
   }
-  //metodo para actualizar una Toppings
 
-  public Toppings updateProducto(Long id, Toppings update){
+  //metodo para actualizar una Toppings
+  public Toppings updateTopping(Long id, Toppings update){
 
     Toppings actualizarT =  toppingsRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Topping no encontrado, no es posible actualizarlo"));
 
-      actualizarT.setNombre_toppings(update.getNombre_toppings());
+    actualizarT.setNombre_topping(update.getNombre_topping());
 
-      return toppingsRepository.save(actualizarT);
+    return toppingsRepository.save(actualizarT);
 
   }
+
+  // metodo para eliminar un Topping
+  public void deleteTopping(Long id){
+    Toppings eliminar =  toppingsRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Topping no encontrado, no es posible eliminarlo"));
+    toppingsRepository.delete(eliminar);
+  }
+
 }

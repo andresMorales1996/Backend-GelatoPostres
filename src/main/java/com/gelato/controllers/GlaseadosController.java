@@ -14,29 +14,28 @@ public class GlaseadosController {
   @Autowired
   private GlaseadosService glaseadosService;
 
-
-  @PostMapping("/crearglaseados")
-  public Glaseados addGlaseados(@RequestBody Glaseados nuevoGlaseado) {
-    return  glaseadosService.addGlaseado(nuevoGlaseado);
-  }
-  @GetMapping("/todoslosglaseados")
+  @GetMapping("/allGlaseados")
   public List<Glaseados> getAllGlaseados(){
     return  glaseadosService.getAllGlaseados();
   }
 
-  @GetMapping("/glaseados/{id}")
-  public Glaseados getGlaseados(@PathVariable Long id){
+  @GetMapping("/glaseado/{id}")
+  public Glaseados getGlaseado(@PathVariable Long id){
     return glaseadosService.getGlaseado(id);
   }
 
-  @DeleteMapping("/deleteglaseados/{id}")
-  public void deleteGlaseados(@PathVariable Long id){
+  @PostMapping("/createGlaseado")
+  public Glaseados addGlaseado(@RequestBody Glaseados nuevoGlaseado) {
+    return  glaseadosService.addGlaseado(nuevoGlaseado);
+  }
+
+  @PutMapping("/updateGlaseado/{id}")
+  public Glaseados updateGlaseado(@PathVariable Long id, @RequestBody Glaseados actualizado) {
+    return glaseadosService.updateGlaseado(id,actualizado);
+  }
+
+  @DeleteMapping("/deleteGlaseado/{id}")
+  public void deleteGlaseado(@PathVariable Long id){
     glaseadosService.deleteGlaseado(id);
   }
-
-  @PutMapping("/actualizarglaseados/{id}")
-  public Glaseados updateGlaseados(@PathVariable Long id, @RequestBody Glaseados actualizado) {
-    return glaseadosService.updateProducto(id,actualizado);
-  }
-
 }

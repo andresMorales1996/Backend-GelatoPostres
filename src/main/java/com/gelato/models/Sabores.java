@@ -9,24 +9,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "glaseados")
-public class Glaseados {
+@Table(name = "sabores")
+public class Sabores {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long ID_glaseado;
+  private Long ID_sabor;
 
-  @Column(name = "nombre_glaseado", nullable = false)
-  private String nombre_glaseado;
+  @Column(name = "nombre_sabor", nullable = false)
+  private String nombre_sabor;
 
-  @Column(name = "precio_glaseado", nullable = false)
-  private double precio_glaseado;
+  @Column(name = "descripcion_sabor", nullable = false)
+  private String descripcion_sabor;
+
 
   //  RELACIONES
 //  @OneToOne
 //  @JoinColumn( name = "personalizar_id")
 //  private Personalizar personalizar;
 //
-//  @OneToOne( mappedBy = "glaseados")
-//  private Personalizar personalizarGlaseados;
+//  @OneToOne( mappedBy = "sabor")
+//  private Personalizar personalizarSabor;
 }
+

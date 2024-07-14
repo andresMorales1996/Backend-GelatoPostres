@@ -14,12 +14,7 @@ public class PersonalizarController {
   @Autowired
   private PersonalizarService personalizarService;
 
-
-  @PostMapping("/crearpersonalizar")
-  public Personalizar addPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
-    return  personalizarService.addPersonalizar(nuevoPersonalizar);
-  }
-  @GetMapping("/todoslospersonalizar")
+  @GetMapping("/allPersonalizar")
   public List<Personalizar> getAllPersonalizar(){
     return  personalizarService.getAllPersonalizar();
   }
@@ -29,14 +24,18 @@ public class PersonalizarController {
     return personalizarService.getPersonalizar(id);
   }
 
-  @DeleteMapping("/deletepersonalizar/{id}")
+  @PostMapping("/createPersonalizar")
+  public Personalizar addPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
+    return  personalizarService.addPersonalizar(nuevoPersonalizar);
+  }
+
+  @PutMapping("/updatePersonalizar/{id}")
+  public Personalizar updatePersonalizar(@PathVariable Long id, @RequestBody Personalizar actualizado) {
+    return personalizarService.updatePersonalizar(id,actualizado);
+  }
+
+  @DeleteMapping("/deletePersonalizar/{id}")
   public void deletePersonalizar(@PathVariable Long id){
     personalizarService.deletePersonalizar(id);
   }
-
-  @PutMapping("/actualizarpersonalizar/{id}")
-  public Personalizar updatePersonalizar(@PathVariable Long id, @RequestBody Personalizar actualizado) {
-    return personalizarService.updateProducto(id,actualizado);
-  }
-
 }

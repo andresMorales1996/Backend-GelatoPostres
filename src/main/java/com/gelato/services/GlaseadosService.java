@@ -14,11 +14,6 @@ public class GlaseadosService {
   @Autowired
   private GlaseadosRepository glaseadosRepository;
 
-  //Agregar nuevo Glaseado
-  public Glaseados addGlaseado(Glaseados nuevoGlaseado){
-    return glaseadosRepository.save(nuevoGlaseado);
-  }
-
   // metodo para mostar todos los glaseados
   public List<Glaseados> getAllGlaseados(){
     return  glaseadosRepository.findAll();
@@ -29,20 +24,26 @@ public class GlaseadosService {
     return  glaseadosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Glaseado no encontrado, intente con otro"));
   }
 
+  //Agregar nuevo Glaseado
+  public Glaseados addGlaseado(Glaseados nuevoGlaseado){
+    return glaseadosRepository.save(nuevoGlaseado);
+  }
+
+  //metodo para actualzar un glaseado
+
+  public Glaseados updateGlaseado(Long id, Glaseados update){
+
+    Glaseados actualizar =  glaseadosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Glaseado no encontrado, no es posible actualizarlo"));
+
+    actualizar.setNombre_glaseado(update.getNombre_glaseado());
+    actualizar.setPrecio_glaseado(update.getPrecio_glaseado());
+
+    return glaseadosRepository.save(actualizar);
+  }
+
   // metodo para eliminar un claseado
   public void deleteGlaseado(Long id){
   Glaseados eliminar =  glaseadosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Glaseado no encontrado, no es posible eliminarlo"));
     glaseadosRepository.delete(eliminar);
-  }
- //metodo para actualzar un glaseado
-
-  public Glaseados updateProducto(Long id, Glaseados update){
-
-    Glaseados actualizar =  glaseadosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Glaseado no encontrado, no es posible actualizarlo"));
-
-      actualizar.setNombre_glaseado(update.getNombre_glaseado());
-      actualizar.setPrecio_glaseados(update.getPrecio_glaseados());
-
-      return glaseadosRepository.save(actualizar);
   }
 }

@@ -14,29 +14,28 @@ public class ToppingsController {
   @Autowired
   private ToppingsService toppingsService;
 
-
-  @PostMapping("/creartoppings")
-  public Toppings addToppings(@RequestBody Toppings nuevoTopping) {
-    return  toppingsService.addToppings(nuevoTopping);
-  }
-  @GetMapping("/todoslostoppings")
+  @GetMapping("/allToppings")
   public List<Toppings> getAllToppings(){
     return  toppingsService.getAllToppings();
   }
 
-  @GetMapping("/toppings/{id}")
-  public Toppings getToppings(@PathVariable Long id){
+  @GetMapping("/topping/{id}")
+  public Toppings getTopping(@PathVariable Long id){
     return toppingsService.getToppings(id);
   }
 
-  @DeleteMapping("/deletetoppings/{id}")
-  public void deleteToppings(@PathVariable Long id){
-    toppingsService.deleteToppings(id);
+  @PostMapping("/createTopping")
+  public Toppings addTopping(@RequestBody Toppings nuevoTopping) {
+    return  toppingsService.addTopping(nuevoTopping);
   }
 
-  @PutMapping("/actualizartoppings/{id}")
-  public Toppings updateToppings(@PathVariable Long id, @RequestBody Toppings actualizado) {
-    return toppingsService.updateProducto(id,actualizado);
+  @PutMapping("/updateTopping/{id}")
+  public Toppings updateTopping(@PathVariable Long id, @RequestBody Toppings actualizado) {
+    return toppingsService.updateTopping(id,actualizado);
   }
 
+  @DeleteMapping("/deleteTopping/{id}")
+  public void deleteTopping(@PathVariable Long id){
+    toppingsService.deleteTopping(id);
+  }
 }
