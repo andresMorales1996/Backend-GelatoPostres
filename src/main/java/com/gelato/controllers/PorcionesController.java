@@ -19,7 +19,7 @@ public class PorcionesController {
         return porcionesService.getAllPorciones();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Porciones addPorciones(@RequestBody Porciones porciones) {
         return porcionesService.addPorciones(porciones);
     }

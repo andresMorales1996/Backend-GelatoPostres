@@ -24,7 +24,7 @@ public class VentasController {
     return ventasService.getVentaById(id);
   }
 
-  @PostMapping
+  @PostMapping("/add")
   public Ventas addVenta(@RequestBody Ventas venta) {
     return ventasService.addVenta(venta);
   }

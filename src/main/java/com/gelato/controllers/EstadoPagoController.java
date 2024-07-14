@@ -24,7 +24,7 @@ public class EstadoPagoController {
     return estadoPagoService.getEstadoPagoById(id);
   }
 
-  @PostMapping
+  @PostMapping("/add")
   public EstadoPago addEstadoPago(@RequestBody EstadoPago estadoPago) {
     return estadoPagoService.addEstadoPago(estadoPago);
   }
