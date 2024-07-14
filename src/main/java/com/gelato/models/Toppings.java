@@ -16,11 +16,6 @@ public class Toppings {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long ID_topping;
 
-<<<<<<< HEAD
-//  @OneToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
-//  private Personalizar personalizar;
-=======
   @Column(name = "nombre_topping", nullable = false)
   private String nombre_topping;
 
@@ -34,5 +29,8 @@ public class Toppings {
 //
 //  @OneToOne( mappedBy = "toppings")
 //  private Personalizar personalizarToppings;
->>>>>>> 5b7b1f1dec0d124a5c7918b93ef609f9483bf004
+
+//  @OneToOne(fetch = FetchType.LAZY)
+//  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
+//  private Personalizar personalizar;
 }

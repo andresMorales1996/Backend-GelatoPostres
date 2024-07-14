@@ -22,12 +22,10 @@ public class Glaseados {
   @Column(name = "precio_glaseados", nullable = false)
   private double precio_glaseados;
 
-<<<<<<< HEAD
 //  @OneToOne(fetch = FetchType.LAZY)
 //  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
 //  private Personalizar personalizar;
 
-=======
   //  RELACIONES
 //  @OneToOne
 //  @JoinColumn( name = "personalizar_id")
@@ -35,5 +33,4 @@ public class Glaseados {
 //
 //  @OneToOne( mappedBy = "glaseados")
 //  private Personalizar personalizarGlaseados;
->>>>>>> 5b7b1f1dec0d124a5c7918b93ef609f9483bf004
 }

@@ -25,16 +25,15 @@ public class Productos {
   @Column(name = "disponibilidad", nullable = false)
   private Boolean disponibilidad;
 
-<<<<<<< HEAD
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ID_categoria", nullable = false)
-    private Categoria categoria;
-=======
   @Column(name = "imagen_producto", nullable = false)
   @Basic(optional = false, fetch = FetchType.EAGER)
   @Lob()
   private byte[] imagen_producto;
->>>>>>> 5b7b1f1dec0d124a5c7918b93ef609f9483bf004
+
+
+
+
+  
 
   //  RELACIONES
 //    @OneToOne
@@ -48,5 +47,8 @@ public class Productos {
 //    @OneToOne
 //    @JoinColumn(name = "ID_porciones", nullable = false)
 //    private Porciones porciones;
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "ID_categoria", nullable = false)
+    // private Categoria categoria;
 
 }
