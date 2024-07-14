@@ -19,10 +19,8 @@ public class Glaseados {
   @Column( name = "precio_glaseados", nullable = false)
   private double precio_glaseados;
 
-  @OneToOne
-  @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;
+//  @OneToOne(fetch = FetchType.LAZY)
+//  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
+//  private Personalizar personalizar;
 
-  @OneToOne( mappedBy = "glaseados")
-  private Personalizar personalizarGlaseados;
 }

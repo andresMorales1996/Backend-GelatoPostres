@@ -29,7 +29,7 @@ public class Productos {
     @Lob()
     private byte[] imagen_producto;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_categoria", nullable = false)
     private Categoria categoria;
 

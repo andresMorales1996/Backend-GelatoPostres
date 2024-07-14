@@ -18,11 +18,8 @@ public class Sabor {
   @Column( name = "descripcion_sabor", nullable = false)
   private String descripcion_sabor;
 
-  @OneToOne
-  @JoinColumn( name = "personalizar_id")
-  private Personalizar personalizar;
-
-  @OneToOne( mappedBy = "sabor")
-  private Personalizar personalizarSabor;
+//  @OneToOne(fetch = FetchType.LAZY)
+//  @JoinColumn(name = "personalizar_id", nullable = false, unique = true)
+//  private Personalizar personalizar;
 }
 
