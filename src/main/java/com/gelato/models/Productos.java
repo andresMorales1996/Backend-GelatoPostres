@@ -22,13 +22,17 @@ public class Productos {
   @Column(name = "descripcion_producto", nullable = false)
   private String descripcion_producto;
 
-  @Column(name = "disponibilidad", nullable = false)
-  private Boolean disponibilidad;
+  @Column(name = "estado_producto", nullable = false)
+  private Boolean estado_producto;
 
   @Column(name = "imagen_producto", nullable = false)
   @Basic(optional = false, fetch = FetchType.EAGER)
   @Lob()
   private byte[] imagen_producto;
+
+  @Column(name = "precio_producto", nullable = false)
+  private double precio_producto;
+
 
   //  RELACIONES
 //    @OneToOne
@@ -40,7 +44,7 @@ public class Productos {
 //    private Relleno relleno;
 //
 //    @OneToOne
-//    @JoinColumn(name = "ID_porciones", nullable = false)
-//    private Porciones porciones;
+//    @JoinColumn(name = "ID_porcion", nullable = false)
+//    private Porciones porcion;
 
 }

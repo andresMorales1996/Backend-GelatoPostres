@@ -8,33 +8,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rellenos")
+@RequestMapping("/rellenos/v1")
 public class RellenosController {
+
     @Autowired
     private RellenosService rellenosService;
 
-    @GetMapping
-    public List<Rellenos> getAllRelleno() {
-        return rellenosService.getAllRelleno();
+    @GetMapping("/allRellenos")
+    public List<Rellenos> getAllRellenos() {
+        return rellenosService.getAllRellenos();
     }
 
-    @PostMapping("/add")
+    @GetMapping("/relleno/{id}")
+    public Rellenos getRelleno(@PathVariable Long id){
+        return rellenosService.getRelleno(id);
+    }
+
+    @PostMapping("/createRelleno")
     public Rellenos addRelleno(@RequestBody Rellenos rellenos) {
         return rellenosService.addRelleno(rellenos);
     }
 
-    @DeleteMapping("/{id}")
+    @PutMapping("/actualizarRelleno/{id}")
+    public Rellenos updateRelleno(@PathVariable Long id, @RequestBody Rellenos rellenos) {
+        return rellenosService.updateRelleno(id, rellenos);
+    }
+
+    @DeleteMapping("/deleteRelleno/{id}")
     public void deleteRelleno(@PathVariable Long id){
         rellenosService.deleteRelleno(id);
     }
 
-    @GetMapping("/{id}")
-    public Rellenos findRelleno(@PathVariable Long id){
-        return rellenosService.findRelleno(id);
-    }
 
-    @PutMapping("/{id}")
-    public Rellenos updateRelleno(@PathVariable Long id, @RequestBody Rellenos rellenos) {
-        return rellenosService.updateRelleno(id, rellenos);
-    }
+
+
 }

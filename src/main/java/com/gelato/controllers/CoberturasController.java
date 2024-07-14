@@ -14,8 +14,8 @@ public class CoberturasController {
   @Autowired
   private CoberturasService coberturasService;
 
-  @GetMapping("/allCoberturaS")
-  public List<Coberturas> getAllCobertura(){
+  @GetMapping("/allCoberturas")
+  public List<Coberturas> getAllCoberturas(){
     return  coberturasService.getAllCoberturas();
   }
 

@@ -8,33 +8,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/categorias/v1")
 public class CategoriasController {
     @Autowired
     private CategoriasService categoriasService;
 
-    @GetMapping
-    public List<Categorias> getAllCategoria() {
-        return categoriasService.getAllCategoria();
+    @GetMapping("/allCategorias")
+    public List<Categorias> getAllCategorias() {
+        return categoriasService.getAllCategorias();
     }
 
-    @PostMapping("/add")
+    @GetMapping("/categoria/{id}")
+    public Categorias getCategoria(@PathVariable Long id){
+        return categoriasService.getCategoria(id);
+    }
+
+    @PostMapping("/createCategoria")
     public Categorias addCategoria(@RequestBody Categorias categorias) {
         return categoriasService.addCategoria(categorias);
     }
 
-    @DeleteMapping("/{id}")
+    @PutMapping("/actualizarCategoria/{id}")
+    public Categorias updateCategoria(@PathVariable Long id, @RequestBody Categorias categorias) {
+        return categoriasService.updateCategoria(id, categorias);
+    }
+
+    @DeleteMapping("/deleteCategoria/{id}")
     public void deleteCategoria(@PathVariable Long id){
         categoriasService.deleteCategoria(id);
     }
 
-    @GetMapping("/{id}")
-    public Categorias findCategoria(@PathVariable Long id){
-        return categoriasService.findCategoria(id);
-    }
 
-    @PutMapping("/{id}")
-    public Categorias updateCategoria(@PathVariable Long id, @RequestBody Categorias categorias) {
-        return categoriasService.updateCategoria(id, categorias);
-    }
 }

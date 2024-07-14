@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "relleno")
+@Table(name = "rellenos")
 public class Rellenos {
 
   @Id
@@ -18,6 +18,9 @@ public class Rellenos {
 
   @Column(name = "nombre_relleno", nullable = false)
   private String nombre_relleno;
+
+  @Column(name = "precio_relleno", nullable = false)
+  private double precio_relleno;
 
   //  RELACIONES
 //    @OneToOne(mappedBy = "relleno", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

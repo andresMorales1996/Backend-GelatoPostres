@@ -8,33 +8,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/productos")
+@RequestMapping("/productos/v1")
 public class ProductosController {
+
     @Autowired
     private ProductosService productosService;
 
-    @GetMapping
+    @GetMapping("/allProductos")
     public List<Productos> getAllProductos() {
         return productosService.getAllProductos();
     }
 
-    @PostMapping("/add")
+    @GetMapping("/producto/{id}")
+    public Productos getProducto(@PathVariable Long id){
+        return productosService.getProducto(id);
+    }
+
+    @PostMapping("/createProducto")
     public Productos addProducto(@RequestBody Productos categoria) {
         return productosService.addProducto(categoria);
     }
 
-    @DeleteMapping("/{id}")
+    @PutMapping("/actualizarProducto/{id}")
+    public Productos updateProducto(@PathVariable Long id, @RequestBody Productos categoria) {
+        return productosService.updateProducto(id, categoria);
+    }
+
+    @DeleteMapping("/deleteProducto/{id}")
     public void deleteProducto(@PathVariable Long id){
         productosService.deleteProducto(id);
     }
 
-    @GetMapping("/{id}")
-    public Productos findProducto(@PathVariable Long id){
-        return productosService.findProducto(id);
-    }
-
-    @PutMapping("/{id}")
-    public Productos updateProducto(@PathVariable Long id, @RequestBody Productos categoria) {
-        return productosService.updateProducto(id, categoria);
-    }
 }

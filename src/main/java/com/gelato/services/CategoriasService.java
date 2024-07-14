@@ -1,7 +1,9 @@
 package com.gelato.services;
 
 import com.gelato.models.Categorias;
+import com.gelato.models.Coberturas;
 import com.gelato.repositories.CategoriasRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,34 +11,39 @@ import java.util.List;
 
 @Service
 public class CategoriasService {
-    // inyección de dependencia
     @Autowired
     private CategoriasRepository categoriasRepository;
 
-    // Obtener todas las categorias existentes
-    public List<Categorias> getAllCategoria(){
+    // metodo para mostrar todas las categorias
+    public List<Categorias> getAllCategorias(){
         return categoriasRepository.findAll();
     }
-    // Crear categoria
+
+    // metodo para mostrar una Categoria en especifico y ver si existe
+    public Categorias getCategoria(Long id) {
+        return categoriasRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Cobertura no encontrada, intente con otro"));
+    }
+
+    // Agregar nueva Categoria
     public Categorias addCategoria(Categorias categorias){
         return categoriasRepository.save(categorias);
     }
-    // Eliminar categoria
-    public void deleteCategoria(Long id){
-        categoriasRepository.deleteById(id);
-    }
-    // Obtener una categoria por id
-    public Categorias findCategoria(Long id) {
-        return categoriasRepository.findById(id).orElse(null);
-    }
-    // Actualizar una categoria
-    public Categorias updateCategoria(Long id, Categorias updateCategorias){
-        Categorias categorias = findCategoria(id);
+
+    // metodo para actualizar una Categoria
+    public Categorias updateCategoria(Long id, Categorias update){
+        Categorias categorias = getCategoria(id);
         if(categorias != null){
-            categorias.setNombre_categoria(updateCategorias.getNombre_categoria());
+            categorias.setNombre_categoria(update.getNombre_categoria());
             return categoriasRepository.save(categorias);
         } else {
             return null;
         }
     }
+
+    // metodo para eliminar una Categoria
+    public void deleteCategoria(Long id){
+        Categorias eliminar =  categoriasRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Categoria no encontrada, no es posible eliminarlo"));
+        categoriasRepository.deleteById(id);
+    }
+
 }

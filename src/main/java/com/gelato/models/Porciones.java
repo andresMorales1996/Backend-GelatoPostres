@@ -14,13 +14,13 @@ public class Porciones {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long ID_porciones;
+  private Long ID_porcion;
 
-  @Column(name = "porcion", nullable = false)
-  private int porcion;
+  @Column(name = "nombre_porcion", nullable = false)
+  private String nombre_porcion;
 
-  @Column(name = "precio_porciones", nullable = false)
-  private int precio_porciones;
+  @Column(name = "precio_porcion", nullable = false)
+  private double precio_porcion;
 
   //  RELACIONES
 //    @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
