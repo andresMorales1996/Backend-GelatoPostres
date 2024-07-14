@@ -30,7 +30,7 @@ public class PorcionesService {
         return porcionesRepository.save(porciones);
     }
 
-    // meotodo para Actualizar una porcion
+    // metodo para Actualizar una porcion
     public Porciones updatePorcion(Long id, Porciones update){
         Porciones porciones = getPorcion(id);
         if(porciones != null){

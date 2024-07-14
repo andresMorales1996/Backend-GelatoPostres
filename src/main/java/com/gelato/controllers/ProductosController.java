@@ -25,11 +25,11 @@ public class ProductosController {
     }
 
     @PostMapping("/createProducto")
-    public Productos addProducto(@RequestBody Productos categoria) {
-        return productosService.addProducto(categoria);
+    public Productos addProducto(@RequestBody Productos productos) {
+        return productosService.addProducto(productos);
     }
 
-    @PutMapping("/actualizarProducto/{id}")
+    @PutMapping("/updateProducto/{id}")
     public Productos updateProducto(@PathVariable Long id, @RequestBody Productos categoria) {
         return productosService.updateProducto(id, categoria);
     }

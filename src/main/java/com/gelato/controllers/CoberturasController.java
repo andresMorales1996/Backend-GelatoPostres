@@ -29,7 +29,7 @@ public class CoberturasController {
     return  coberturasService.addCobertura(nuevoCoberturas);
   }
 
-  @PutMapping("/actualizarCobertura/{id}")
+  @PutMapping("/updateCobertura/{id}")
   public Coberturas updateCobertura(@PathVariable Long id, @RequestBody Coberturas actualizado) {
     return coberturasService.updateCobertura(id,actualizado);
   }

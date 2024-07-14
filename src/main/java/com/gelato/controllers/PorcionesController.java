@@ -29,13 +29,14 @@ public class PorcionesController {
         return porcionesService.addPorcion(porciones);
     }
 
+    @PutMapping("/updatePorcion/{id}")
+    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
+        return porcionesService.updatePorcion(id, porciones);
+    }
+
     @DeleteMapping("/deletePorcion/{id}")
     public void deletePorcion(@PathVariable Long id){
         porcionesService.deletePorcion(id);
     }
 
-    @PutMapping("/{id}")
-    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
-        return porcionesService.updatePorcion(id, porciones);
-    }
 }
