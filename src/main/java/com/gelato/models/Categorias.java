@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "categoria")
-public class Categoria {
+public class Categorias {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID_categoria;
@@ -18,6 +19,7 @@ public class Categoria {
     @Column(name = "nombre_categoria", nullable = false)
     private String nombre_categoria;
 
-    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Productos productos;
+  //  RELACIONES
+//    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+//    private Productos productos;
 }

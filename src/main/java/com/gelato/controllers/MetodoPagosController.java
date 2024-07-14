@@ -1,6 +1,6 @@
 package com.gelato.controllers;
 
-import com.gelato.models.MetodoPago;
+import com.gelato.models.MetodoPagos;
 import com.gelato.services.MetodoPagoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,30 +8,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/metodo-pago")
-public class MetodoPagoController {
+@RequestMapping("/api/metodo-pago")
+public class MetodoPagosController {
 
   @Autowired
   private MetodoPagoService metodoPagoService;
 
   @GetMapping
-  public List<MetodoPago> getAllMetodosPago() {
+  public List<MetodoPagos> getAllMetodosPago() {
     return metodoPagoService.getAllMetodosPago();
   }
 
   @GetMapping("/{id}")
-  public MetodoPago getMetodoPagoById(@PathVariable Long id) {
+  public MetodoPagos getMetodoPagoById(@PathVariable Long id) {
     return metodoPagoService.getMetodoPagoById(id);
   }
 
-  @PostMapping
-  public MetodoPago addMetodoPago(@RequestBody MetodoPago metodoPago) {
-    return metodoPagoService.addMetodoPago(metodoPago);
+  @PostMapping("/add")
+  public MetodoPagos addMetodoPago(@RequestBody MetodoPagos metodoPagos) {
+    return metodoPagoService.addMetodoPago(metodoPagos);
   }
 
   @PutMapping("/{id}")
-  public MetodoPago updateMetodoPago(@PathVariable Long id, @RequestBody MetodoPago metodoPagoDetails) {
-    return metodoPagoService.updateMetodoPago(id, metodoPagoDetails);
+  public MetodoPagos updateMetodoPago(@PathVariable Long id, @RequestBody MetodoPagos metodoPagosDetails) {
+    return metodoPagoService.updateMetodoPago(id, metodoPagosDetails);
   }
 
   @DeleteMapping("/{id}")

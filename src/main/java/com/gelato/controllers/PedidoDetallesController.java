@@ -24,7 +24,7 @@ public class PedidoDetallesController {
     return pedidoDetallesService.getPedidoDetalleById(id);
   }
 
-  @PostMapping
+  @PostMapping("/add")
   public PedidoDetalles addPedidoDetalle(@RequestBody PedidoDetalles pedidoDetalle) {
     return pedidoDetallesService.addPedidoDetalle(pedidoDetalle);
   }

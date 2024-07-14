@@ -8,11 +8,11 @@ import lombok.*;
 @Data
 @Entity
 @Table(name = "metodo_pago")
+public class MetodoPagos {
 
-public class MetodoPago {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long metodo_pago;
+  private Long ID_metodo_pago;
 
   @Column(name = "nombre_metodo_pago", nullable = false)
   private String nombre_metodo_pago;
