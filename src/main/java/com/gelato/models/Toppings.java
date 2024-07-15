@@ -21,12 +21,5 @@ public class Toppings {
 
   @Column(name = "precio_topping", nullable = false)
   private String precio_topping;
-
-  //  RELACIONES
-  //  @OneToOne
-//  @JoinColumn( name = "personalizar_id")
-//  private Personalizar personalizar;
-//
-//  @OneToOne( mappedBy = "toppings")
-//  private Personalizar personalizarToppings;
+  
 }

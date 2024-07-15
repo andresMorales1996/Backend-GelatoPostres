@@ -30,7 +30,7 @@ public class RolesController {
     }
   }
   
-  @PostMapping("/add")
+  @PostMapping("/create")
   public ResponseEntity<Roles> crearRol(@RequestBody Roles roles) {
     Roles nuevoRoles = rolesService.guardarRol(roles);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevoRoles);

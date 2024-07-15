@@ -2,6 +2,7 @@ package com.gelato.services;
 
 import com.gelato.models.Porciones;
 import com.gelato.repositories.PorcionesRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,7 @@ public class PorcionesService {
     }
 
     //Agregar nueva Porcion
-    public Porciones addPorcion(Porciones porciones){
+    public Porciones createPorcion(Porciones porciones){
         return porcionesRepository.save(porciones);
     }
 

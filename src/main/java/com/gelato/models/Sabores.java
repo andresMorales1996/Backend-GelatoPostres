@@ -14,6 +14,7 @@ public class Sabores {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_categoria")
   private Long ID_sabor;
 
   @Column(name = "nombre_sabor", nullable = false)
@@ -21,14 +22,5 @@ public class Sabores {
 
   @Column(name = "descripcion_sabor", nullable = false)
   private String descripcion_sabor;
-
-
-  //  RELACIONES
-//  @OneToOne
-//  @JoinColumn( name = "personalizar_id")
-//  private Personalizar personalizar;
-//
-//  @OneToOne( mappedBy = "sabor")
-//  private Personalizar personalizarSabor;
+  
 }
-

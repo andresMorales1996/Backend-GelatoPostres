@@ -25,7 +25,7 @@ public class GlaseadosService {
   }
 
   //Agregar nuevo Glaseado
-  public Glaseados addGlaseado(Glaseados nuevoGlaseado){
+  public Glaseados createGlaseado(Glaseados nuevoGlaseado){
     return glaseadosRepository.save(nuevoGlaseado);
   }
 

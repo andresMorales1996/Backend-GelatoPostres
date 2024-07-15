@@ -18,9 +18,8 @@ public class PedidoDetalles {
   private int cantidad;
 
   //  RELACIONES
-//  @OneToOne
-//  @JoinColumn(name = "ID_pedido", nullable = false)
-//  private Pedido pedido;
+//  @OneToOne(mappedBy = "pedido_detalles", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+//  private PedidoDetalles pedido_detalles;
 //
 //  @OneToOne
 //  @JoinColumn(name = "ID_estado_pago", nullable = false)

@@ -25,8 +25,8 @@ public class PersonalizarController {
   }
 
   @PostMapping("/createPersonalizar")
-  public Personalizar addPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
-    return  personalizarService.addPersonalizar(nuevoPersonalizar);
+  public Personalizar createPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
+    return  personalizarService.createPersonalizar(nuevoPersonalizar);
   }
 
   @PutMapping("/updatePersonalizar/{id}")

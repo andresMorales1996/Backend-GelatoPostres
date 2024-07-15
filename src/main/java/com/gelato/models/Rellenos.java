@@ -1,6 +1,5 @@
 package com.gelato.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,6 +14,7 @@ public class Rellenos {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_relleno")
   private Long ID_relleno;
 
   @Column(name = "nombre_relleno", nullable = false)
@@ -22,7 +22,5 @@ public class Rellenos {
 
   @Column(name = "precio_relleno", nullable = false)
   private double precio_relleno;
-
-
-
+  
 }

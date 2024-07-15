@@ -24,8 +24,8 @@ public class CategoriasController {
     }
 
     @PostMapping("/createCategoria")
-    public Categorias addCategoria(@RequestBody Categorias categorias) {
-        return categoriasService.addCategoria(categorias);
+    public Categorias createCategoria(@RequestBody Categorias categorias) {
+        return categoriasService.createCategoria(categorias);
     }
 
     @PutMapping("/updateCategoria/{id}")

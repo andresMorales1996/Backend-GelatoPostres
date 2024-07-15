@@ -1,7 +1,6 @@
 package com.gelato.services;
 
 import com.gelato.models.Categorias;
-import com.gelato.models.Coberturas;
 import com.gelato.repositories.CategoriasRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ public class CategoriasService {
     }
 
     // Agregar nueva Categoria
-    public Categorias addCategoria(Categorias categorias){
+    public Categorias createCategoria(Categorias categorias){
         return categoriasRepository.save(categorias);
     }
 

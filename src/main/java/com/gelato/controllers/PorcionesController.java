@@ -25,8 +25,8 @@ public class PorcionesController {
     }
 
     @PostMapping("/createPorcion")
-    public Porciones addPorcion(@RequestBody Porciones porciones) {
-        return porcionesService.addPorcion(porciones);
+    public Porciones createPorcion(@RequestBody Porciones porciones) {
+        return porcionesService.createPorcion(porciones);
     }
 
     @PutMapping("/updatePorcion/{id}")

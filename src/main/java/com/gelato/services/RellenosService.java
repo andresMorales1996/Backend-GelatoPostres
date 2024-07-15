@@ -1,7 +1,5 @@
 package com.gelato.services;
 
-
-import com.gelato.models.Categorias;
 import com.gelato.models.Rellenos;
 import com.gelato.repositories.RellenosRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -27,7 +25,7 @@ public class RellenosService {
     }
 
     // Agregar nuevo relleno
-    public Rellenos addRelleno(Rellenos rellenos){
+    public Rellenos createRelleno(Rellenos rellenos){
         return rellenosRepository.save(rellenos);
     }
 

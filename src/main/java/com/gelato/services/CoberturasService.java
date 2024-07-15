@@ -25,7 +25,7 @@ public class CoberturasService {
   }
 
   //Agregar nueva Cobertura
-  public Coberturas addCobertura(Coberturas nuevoCoberturas){
+  public Coberturas createCobertura(Coberturas nuevoCoberturas){
     return coberturasRepository.save(nuevoCoberturas);
   }
 

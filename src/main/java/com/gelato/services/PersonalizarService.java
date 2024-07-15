@@ -25,7 +25,7 @@ public class PersonalizarService {
   }
 
   //Agregar nuevo Personalizar
-  public Personalizar addPersonalizar(Personalizar nuevoPersonalizar) {
+  public Personalizar createPersonalizar(Personalizar nuevoPersonalizar) {
     return personalizarRepository.save(nuevoPersonalizar);
   }
 

@@ -14,6 +14,7 @@ public class Glaseados {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "glaseado")
   private Long ID_glaseado;
 
   @Column(name = "nombre_glaseado", nullable = false)
@@ -22,11 +23,4 @@ public class Glaseados {
   @Column(name = "precio_glaseado", nullable = false)
   private double precio_glaseado;
 
-  //  RELACIONES
-//  @OneToOne
-//  @JoinColumn( name = "personalizar_id")
-//  private Personalizar personalizar;
-//
-//  @OneToOne( mappedBy = "glaseados")
-//  private Personalizar personalizarGlaseados;
 }

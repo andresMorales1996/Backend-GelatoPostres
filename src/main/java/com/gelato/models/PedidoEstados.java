@@ -7,13 +7,15 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "estado_pago")
+@Table(name = "pedido_estados")
 public class PedidoEstados {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long ID_estado_pago;
+  @Column(name = "ID_pedido_estado")
+  private Long ID_pedido_estado;
 
-  @Column(name = "nombre_estado_pago", nullable = false)
-  private String nombre_estado_pago;
+  @Column(name = "nombre_pedido_estado", nullable = false)
+  private String nombre_pedido_estado;
+
 }

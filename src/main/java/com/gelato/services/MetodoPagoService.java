@@ -21,7 +21,7 @@ public class MetodoPagoService {
     return metodoPagosRepository.findById(id).orElse(null);
   }
 
-  public MetodoPagos addMetodoPago(MetodoPagos metodoPagos) {
+  public MetodoPagos createMetodoPago(MetodoPagos metodoPagos) {
     return metodoPagosRepository.save(metodoPagos);
   }
 

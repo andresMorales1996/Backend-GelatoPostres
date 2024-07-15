@@ -30,7 +30,7 @@ public class UsuariosController {
     }
   }
   
-  @PostMapping("/add")
+  @PostMapping("/create")
   public ResponseEntity<Usuarios> crearUsuario(@RequestBody Usuarios usuarios) {
     Usuarios nuevoUsuarios = usuariosService.guardarUsuario(usuarios);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuarios);

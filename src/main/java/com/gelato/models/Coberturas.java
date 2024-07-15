@@ -14,17 +14,10 @@ public class Coberturas {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_cobertura")
   private Long ID_cobertura;
 
   @Column(name = "nombre_cobertura", nullable = false)
   private String nombre_cobertura;
 
-  //  RELACIONES
-//  @OneToOne
-//  @JoinColumn( name = "personalizar_id")
-//  private Personalizar personalizar;
-//
-//  @OneToOne(mappedBy = "cobertura", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//  private Personalizar personalizarCobertura;
 }
-

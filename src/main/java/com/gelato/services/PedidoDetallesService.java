@@ -21,7 +21,7 @@ public class PedidoDetallesService {
     return pedidoDetallesRepository.findById(id).orElse(null);
   }
 
-  public PedidoDetalles addPedidoDetalle(PedidoDetalles pedidoDetalle) {
+  public PedidoDetalles createPedidoDetalle(PedidoDetalles pedidoDetalle) {
     return pedidoDetallesRepository.save(pedidoDetalle);
   }
 

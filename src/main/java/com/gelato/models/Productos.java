@@ -1,7 +1,5 @@
 package com.gelato.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +14,7 @@ public class Productos {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_producto")
   private Long ID_producto;
 
   @Column(name = "nombre_producto", nullable = false)
@@ -28,12 +27,22 @@ public class Productos {
   private Boolean estado_producto;
 
   @Column(name = "imagen_producto", nullable = false)
-  @Basic(optional = false, fetch = FetchType.EAGER)
-  @Lob()
+  @Lob
   private byte[] imagen_producto;
 
   @Column(name = "precio_producto", nullable = false)
   private double precio_producto;
 
+  @ManyToOne
+  @JoinColumn(name = "ID_categoria")
+  private Categorias categoria;
 
+  @ManyToOne
+  @JoinColumn(name = "ID_porcion")
+  private Porciones porcion;
+
+  @ManyToOne
+  @JoinColumn(name = "ID_relleno")
+  private Rellenos relleno;
+  
 }
