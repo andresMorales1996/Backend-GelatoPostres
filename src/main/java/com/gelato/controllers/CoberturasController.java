@@ -15,27 +15,28 @@ public class CoberturasController {
   private CoberturasService coberturasService;
 
   @GetMapping("/allCoberturas")
-  public List<Coberturas> getAllCoberturas(){
-    return  coberturasService.getAllCoberturas();
+  public List<Coberturas> getAllCoberturas() {
+    return coberturasService.getAllCoberturas();
   }
 
   @GetMapping("/cobertura/{id}")
-  public Coberturas getCobertura(@PathVariable Long id){
+  public Coberturas getCobertura(@PathVariable Long id) {
     return coberturasService.getCobertura(id);
   }
 
   @PostMapping("/createCobertura")
   public Coberturas createCobertura(@RequestBody Coberturas nuevoCoberturas) {
-    return  coberturasService.createCobertura(nuevoCoberturas);
+    return coberturasService.createCobertura(nuevoCoberturas);
   }
 
   @PutMapping("/updateCobertura/{id}")
   public Coberturas updateCobertura(@PathVariable Long id, @RequestBody Coberturas actualizado) {
-    return coberturasService.updateCobertura(id,actualizado);
+    return coberturasService.updateCobertura(id, actualizado);
   }
 
   @DeleteMapping("/deleteCobertura/{id}")
-  public void deleteCobertura(@PathVariable Long id){
+  public void deleteCobertura(@PathVariable Long id) {
     coberturasService.deleteCobertura(id);
   }
+
 }

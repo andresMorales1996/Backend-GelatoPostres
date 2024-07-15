@@ -9,22 +9,30 @@ import java.util.List;
 
 @Service
 public class RolesService {
+
   @Autowired
   private RolesRepository rolesRepository;
-  
-  public List<Roles> obtenerTodosRoles() {
+
+  // MÉTODO LISTAR ROLES
+  public List<Roles> getAllRoles() {
     return rolesRepository.findAll();
   }
-  
-  public Roles obtenerRolId(Long id) {
+
+  // MÉTODO BUSCAR ROL POR ID
+  public Roles getRol(Long id) {
     return rolesRepository.findById(id).orElse(null);
   }
-  
-  public Roles guardarRol(Roles roles) {
+
+  // MÉTODO AGREGAR ROL
+  public Roles createRol(Roles roles) {
     return rolesRepository.save(roles);
   }
-  
-  public void borrarRol(Long id) {
+
+  // MÉTODO ACTUALIZAR ROL
+
+  // MÉTODO ELIMINAR ROL 
+  public void deleteRol(Long id) {
     rolesRepository.deleteById(id);
   }
+
 }

@@ -14,6 +14,7 @@ public class Toppings {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_topping")
   private Long ID_topping;
 
   @Column(name = "nombre_topping", nullable = false)
@@ -21,5 +22,5 @@ public class Toppings {
 
   @Column(name = "precio_topping", nullable = false)
   private String precio_topping;
-  
+
 }

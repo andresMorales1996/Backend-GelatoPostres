@@ -15,27 +15,27 @@ public class PersonalizarController {
   private PersonalizarService personalizarService;
 
   @GetMapping("/allPersonalizar")
-  public List<Personalizar> getAllPersonalizar(){
-    return  personalizarService.getAllPersonalizar();
+  public List<Personalizar> getAllPersonalizar() {
+    return personalizarService.getAllPersonalizar();
   }
 
   @GetMapping("/personalizar/{id}")
-  public Personalizar getPersonalizar(@PathVariable Long id){
+  public Personalizar getPersonalizar(@PathVariable Long id) {
     return personalizarService.getPersonalizar(id);
   }
 
   @PostMapping("/createPersonalizar")
   public Personalizar createPersonalizar(@RequestBody Personalizar nuevoPersonalizar) {
-    return  personalizarService.createPersonalizar(nuevoPersonalizar);
+    return personalizarService.createPersonalizar(nuevoPersonalizar);
   }
 
   @PutMapping("/updatePersonalizar/{id}")
   public Personalizar updatePersonalizar(@PathVariable Long id, @RequestBody Personalizar actualizado) {
-    return personalizarService.updatePersonalizar(id,actualizado);
+    return personalizarService.updatePersonalizar(id, actualizado);
   }
 
   @DeleteMapping("/deletePersonalizar/{id}")
-  public void deletePersonalizar(@PathVariable Long id){
+  public void deletePersonalizar(@PathVariable Long id) {
     personalizarService.deletePersonalizar(id);
   }
 }

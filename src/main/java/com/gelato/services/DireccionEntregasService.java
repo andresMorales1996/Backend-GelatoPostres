@@ -9,22 +9,31 @@ import java.util.List;
 
 @Service
 public class DireccionEntregasService {
+
   @Autowired
   private DireccionEntregasRepository direccionEntregasRepository;
-  
-  public List<DireccionEntregas> obtenerDireccionesEntrega() {
+
+  // MÉTODO LISTAR DIRECCIONENTREGAS
+  public List<DireccionEntregas> getAllDireccionEntregas() {
+
     return direccionEntregasRepository.findAll();
   }
-  
-  public DireccionEntregas obtenerDireccionesEntregaId(Long id) {
+
+  // MÉTODO BUSCAR DIRECCIONENTREGA POR ID
+  public DireccionEntregas getDireccionEntrega(Long id) {
     return direccionEntregasRepository.findById(id).orElse(null);
   }
-  
-  public DireccionEntregas guardarDireccionesEntrega(DireccionEntregas direccionEntregas) {
+
+  // MÉTODO AGREGAR DIRECCIONENTREGA
+  public DireccionEntregas createDireccionEntrega(DireccionEntregas direccionEntregas) {
     return direccionEntregasRepository.save(direccionEntregas);
   }
-  
-  public void borrarDireccionesEntrega(Long id) {
+
+  // MÉTODO ACTUALIZAR DIRECCIONENTREGA
+
+  // MÉTODO ELIMINAR DIRECCIONENTREGA  
+  public void deleteDireccionEntrega(Long id) {
     direccionEntregasRepository.deleteById(id);
   }
+
 }

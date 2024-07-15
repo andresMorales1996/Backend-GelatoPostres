@@ -12,14 +12,16 @@ public class PedidoDetalles {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_pedido_detalle")
   private Long ID_pedido_detalle;
 
   @Column(name = "cantidad", nullable = false)
   private int cantidad;
 
-  //  RELACIONES
-//  @OneToOne(mappedBy = "pedido_detalles", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//  private PedidoDetalles pedido_detalles;
+  //LLAVES FORÁNEAS
+//  @OneToOne
+//  @JoinColumn(name = "ID_pedido", nullable = false)
+//  private Pedido pedido;
 //
 //  @OneToOne
 //  @JoinColumn(name = "ID_estado_pago", nullable = false)

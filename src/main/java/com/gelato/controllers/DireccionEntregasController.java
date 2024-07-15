@@ -10,52 +10,55 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/direccion-entrega")
+@RequestMapping("/direccionEntregas/v1")
 public class DireccionEntregasController {
+
   @Autowired
   private DireccionEntregasService direccionEntregasService;
-  
-  @GetMapping
+
+  @GetMapping("/allDireccionEntregas")
   public List<DireccionEntregas> obtenerTodasDireccionesEntrega() {
-    return direccionEntregasService.obtenerDireccionesEntrega();
+    return direccionEntregasService.getAllDireccionEntregas();
   }
-  
-  @GetMapping("/{id}")
+
+  @GetMapping("direccionEntrega/{id}")
   public ResponseEntity<DireccionEntregas> obtenerDireccionEntregaPorId(@PathVariable Long id) {
-    DireccionEntregas direccionEntrega = direccionEntregasService.obtenerDireccionesEntregaId(id);
+    DireccionEntregas direccionEntrega = direccionEntregasService.getDireccionEntrega(id);
     if (direccionEntrega != null) {
       return ResponseEntity.ok(direccionEntrega);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @PostMapping("/create")
+
+  @PostMapping("/createDireccionEntrega")
   public ResponseEntity<DireccionEntregas> crearDireccionEntrega(@RequestBody DireccionEntregas direccionEntrega) {
-    DireccionEntregas nuevaDireccionEntrega = direccionEntregasService.guardarDireccionesEntrega(direccionEntrega);
+    DireccionEntregas nuevaDireccionEntrega = direccionEntregasService.createDireccionEntrega(direccionEntrega);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevaDireccionEntrega);
   }
-  
-  @PutMapping("/{id}")
-  public ResponseEntity<DireccionEntregas> modificarDireccionEntrega(@PathVariable Long id, @RequestBody DireccionEntregas direccionEntrega) {
-    DireccionEntregas direccionEntregaExistente = direccionEntregasService.obtenerDireccionesEntregaId(id);
+
+  @PutMapping("updateDireccionEntrega/{id}")
+  public ResponseEntity<DireccionEntregas> modificarDireccionEntrega(@PathVariable Long id,
+                                                                     @RequestBody DireccionEntregas direccionEntrega) {
+    DireccionEntregas direccionEntregaExistente = direccionEntregasService.getDireccionEntrega(id);
     if (direccionEntregaExistente != null) {
-      direccionEntrega.setID_direcciones_entrega(id);
-      direccionEntregasService.guardarDireccionesEntrega(direccionEntrega);
+      direccionEntrega.setID_direccion_entrega(id);
+      direccionEntregasService.createDireccionEntrega(direccionEntrega);
       return ResponseEntity.ok(direccionEntrega);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @DeleteMapping("/{id}")
+
+  @DeleteMapping("/deleteDireccionEntrega/{id}")
   public ResponseEntity<Void> eliminarDireccionEntrega(@PathVariable Long id) {
-    DireccionEntregas direccionEntrega = direccionEntregasService.obtenerDireccionesEntregaId(id);
+    DireccionEntregas direccionEntrega = direccionEntregasService.getDireccionEntrega(id);
     if (direccionEntrega != null) {
-      direccionEntregasService.borrarDireccionesEntrega(id);
+      direccionEntregasService.deleteDireccionEntrega(id);
       return ResponseEntity.noContent().build();
     } else {
       return ResponseEntity.notFound().build();
     }
   }
+
 }

@@ -10,39 +10,40 @@ import java.util.List;
 
 @Service
 public class RellenosService {
-    // inyección de dependencia
-    @Autowired
-    private RellenosRepository rellenosRepository;
 
-    // metodo para mostrar todos los rellenos
-    public List<Rellenos> getAllRellenos(){
-        return rellenosRepository.findAll();
-    }
+  @Autowired
+  private RellenosRepository rellenosRepository;
 
-    // metodo para mostrar un Relleno en especifico y ver si existe
-    public Rellenos getRelleno(Long id) {
-        return rellenosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Relleno no encontrada, intente con otro"));
-    }
+  // MÉTODO LISTAR RELLENOS
+  public List<Rellenos> getAllRellenos() {
+    return rellenosRepository.findAll();
+  }
 
-    // Agregar nuevo relleno
-    public Rellenos createRelleno(Rellenos rellenos){
-        return rellenosRepository.save(rellenos);
-    }
+  // MÉTODO BUSCAR RELLENO POR ID
+  public Rellenos getRelleno(Long id) {
+    return rellenosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Relleno no encontrada, intente con otro"));
+  }
 
-    // metodo para Actualizar un relleno
-    public Rellenos updateRelleno(Long id, Rellenos updateRellenos){
-        Rellenos rellenos = getRelleno(id);
-        if(rellenos != null){
-            rellenos.setNombre_relleno(updateRellenos.getNombre_relleno());
-            return rellenosRepository.save(rellenos);
-        } else {
-            return null;
-        }
-    }
+  // MÉTODO AGREGAR RELLENO
+  public Rellenos createRelleno(Rellenos rellenos) {
+    return rellenosRepository.save(rellenos);
+  }
 
-    // metodo para Eliminar relleno
-    public void deleteRelleno(Long id){
-        Rellenos eliminar =  rellenosRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Relleno no encontrada, no es posible eliminarlo"));
-        rellenosRepository.deleteById(id);
+  // MÉTODO ACTUALIZAR RELLENO
+  public Rellenos updateRelleno(Long id, Rellenos updateRellenos) {
+    Rellenos rellenos = getRelleno(id);
+    if (rellenos != null) {
+      rellenos.setNombre_relleno(updateRellenos.getNombre_relleno());
+      return rellenosRepository.save(rellenos);
+    } else {
+      return null;
     }
+  }
+
+  // MÉTODO ELIMINAR RELLENO
+  public void deleteRelleno(Long id) {
+    Rellenos eliminar = rellenosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Relleno no encontrada, no es posible eliminarlo"));
+    rellenosRepository.deleteById(id);
+  }
+
 }

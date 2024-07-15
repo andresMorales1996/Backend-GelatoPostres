@@ -10,33 +10,33 @@ import java.util.List;
 @RestController
 @RequestMapping("/categorias/v1")
 public class CategoriasController {
-    @Autowired
-    private CategoriasService categoriasService;
 
-    @GetMapping("/allCategorias")
-    public List<Categorias> getAllCategorias() {
-        return categoriasService.getAllCategorias();
-    }
+  @Autowired
+  private CategoriasService categoriasService;
 
-    @GetMapping("/categoria/{id}")
-    public Categorias getCategoria(@PathVariable Long id){
-        return categoriasService.getCategoria(id);
-    }
+  @GetMapping("/allCategorias")
+  public List<Categorias> getAllCategorias() {
+    return categoriasService.getAllCategorias();
+  }
 
-    @PostMapping("/createCategoria")
-    public Categorias createCategoria(@RequestBody Categorias categorias) {
-        return categoriasService.createCategoria(categorias);
-    }
+  @GetMapping("/categoria/{id}")
+  public Categorias getCategoria(@PathVariable Long id) {
+    return categoriasService.getCategoria(id);
+  }
 
-    @PutMapping("/updateCategoria/{id}")
-    public Categorias updateCategoria(@PathVariable Long id, @RequestBody Categorias categorias) {
-        return categoriasService.updateCategoria(id, categorias);
-    }
+  @PostMapping("/createCategoria")
+  public Categorias createCategoria(@RequestBody Categorias categorias) {
+    return categoriasService.createCategoria(categorias);
+  }
 
-    @DeleteMapping("/deleteCategoria/{id}")
-    public void deleteCategoria(@PathVariable Long id){
-        categoriasService.deleteCategoria(id);
-    }
+  @PutMapping("/updateCategoria/{id}")
+  public Categorias updateCategoria(@PathVariable Long id, @RequestBody Categorias categorias) {
+    return categoriasService.updateCategoria(id, categorias);
+  }
 
+  @DeleteMapping("/deleteCategoria/{id}")
+  public void deleteCategoria(@PathVariable Long id) {
+    categoriasService.deleteCategoria(id);
+  }
 
 }

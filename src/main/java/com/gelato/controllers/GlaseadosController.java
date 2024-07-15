@@ -15,27 +15,28 @@ public class GlaseadosController {
   private GlaseadosService glaseadosService;
 
   @GetMapping("/allGlaseados")
-  public List<Glaseados> getAllGlaseados(){
-    return  glaseadosService.getAllGlaseados();
+  public List<Glaseados> getAllGlaseados() {
+    return glaseadosService.getAllGlaseados();
   }
 
   @GetMapping("/glaseado/{id}")
-  public Glaseados getGlaseado(@PathVariable Long id){
+  public Glaseados getGlaseado(@PathVariable Long id) {
     return glaseadosService.getGlaseado(id);
   }
 
   @PostMapping("/createGlaseado")
   public Glaseados createGlaseado(@RequestBody Glaseados nuevoGlaseado) {
-    return  glaseadosService.createGlaseado(nuevoGlaseado);
+    return glaseadosService.createGlaseado(nuevoGlaseado);
   }
 
   @PutMapping("/updateGlaseado/{id}")
   public Glaseados updateGlaseado(@PathVariable Long id, @RequestBody Glaseados actualizado) {
-    return glaseadosService.updateGlaseado(id,actualizado);
+    return glaseadosService.updateGlaseado(id, actualizado);
   }
 
   @DeleteMapping("/deleteGlaseado/{id}")
-  public void deleteGlaseado(@PathVariable Long id){
+  public void deleteGlaseado(@PathVariable Long id) {
     glaseadosService.deleteGlaseado(id);
   }
+
 }

@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DireccionEntregasRepository extends JpaRepository<DireccionEntregas,Long> {
+public interface DireccionEntregasRepository extends JpaRepository<DireccionEntregas, Long> {
 }

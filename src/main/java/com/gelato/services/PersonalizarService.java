@@ -11,26 +11,26 @@ import java.util.List;
 @Service
 
 public class PersonalizarService {
+
   @Autowired
   private PersonalizarRepository personalizarRepository;
 
-  // metodo para mostar todos los Personalizar
+  // MÉTODO LISTAR PERSONALIZAR
   public List<Personalizar> getAllPersonalizar() {
     return personalizarRepository.findAll();
   }
 
-  // metodo para mostar un Personalizar en especifico y ver si existe
+  // MÉTODO BUSCAR PERSONALIZAR POR ID
   public Personalizar getPersonalizar(Long id) {
     return personalizarRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Personalizar no encontrado, intente con otro"));
   }
 
-  //Agregar nuevo Personalizar
+  // MÉTODO AGREGAR PERSONALIZAR
   public Personalizar createPersonalizar(Personalizar nuevoPersonalizar) {
     return personalizarRepository.save(nuevoPersonalizar);
   }
 
-  //metodo para actualzar una Personalizar
-
+  // MÉTODO ACTUALIZAR PERSONALIZAR
   public Personalizar updatePersonalizar(Long id, Personalizar update) {
 
     Personalizar actualizarP = personalizarRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Personalizar no encontrado, no es posible actualizarlo"));
@@ -41,7 +41,7 @@ public class PersonalizarService {
     return personalizarRepository.save(actualizarP);
   }
 
-  // metodo para eliminar un Personalizar
+  // MÉTODO ELIMINAR PERSONALIZAR
   public void deletePersonalizar(Long id) {
     Personalizar eliminar = personalizarRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Personalizar no encontrado, no es posible eliminarlo"));
     personalizarRepository.delete(eliminar);

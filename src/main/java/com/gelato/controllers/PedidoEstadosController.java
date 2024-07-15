@@ -21,7 +21,7 @@ public class PedidoEstadosController {
 
   @GetMapping("/pedidoEstado/{id}")
   public PedidoEstados getEstadoPagoById(@PathVariable Long id) {
-    return pedidoEstadosService.getEstadoPagoById(id);
+    return pedidoEstadosService.getEstadoPago(id);
   }
 
   @PostMapping("/createEstadoPedido")

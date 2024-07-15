@@ -33,6 +33,7 @@ public class Productos {
   @Column(name = "precio_producto", nullable = false)
   private double precio_producto;
 
+  //LLAVES FORÁNEAS
   @ManyToOne
   @JoinColumn(name = "ID_categoria")
   private Categorias categoria;
@@ -44,5 +45,5 @@ public class Productos {
   @ManyToOne
   @JoinColumn(name = "ID_relleno")
   private Rellenos relleno;
-  
+
 }

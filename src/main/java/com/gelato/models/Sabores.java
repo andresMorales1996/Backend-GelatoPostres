@@ -14,13 +14,13 @@ public class Sabores {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_categoria")
+  @Column(name = "ID_sabor")
   private Long ID_sabor;
 
   @Column(name = "nombre_sabor", nullable = false)
   private String nombre_sabor;
 
-  @Column(name = "descripcion_sabor", nullable = false)
-  private String descripcion_sabor;
-  
+  @Column(name = "precio_sabor", nullable = false)
+  private String precio_sabor;
+
 }

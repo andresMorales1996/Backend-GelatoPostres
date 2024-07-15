@@ -12,6 +12,7 @@ public class Usuarios {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_usuario")
   private Long ID_usuario;
 
   @Column(name = "nombre_usuario", nullable = false)
@@ -32,7 +33,7 @@ public class Usuarios {
   @Column(name = "imagen_usuario")
   private byte[] imagen_usuario;
 
-  //  RELACIONES
+  //LLAVES FORÁNEAS
 //  @OneToOne
 //  @JoinColumn(name = "ID_rol", referencedColumnName = "ID_rol")
 //  private Rol rol;

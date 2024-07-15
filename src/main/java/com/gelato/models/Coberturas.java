@@ -20,4 +20,7 @@ public class Coberturas {
   @Column(name = "nombre_cobertura", nullable = false)
   private String nombre_cobertura;
 
+  @Column(name = "precio_cobertura", nullable = false)
+  private String precio_cobertura;
+
 }
