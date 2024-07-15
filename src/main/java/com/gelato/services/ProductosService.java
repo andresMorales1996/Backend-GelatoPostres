@@ -8,6 +8,14 @@ import com.gelato.repositories.RellenosRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 import java.util.List;
 
@@ -76,4 +84,30 @@ public class ProductosService {
   public List<Rellenos> getAllRellenos() {
     return rellenosRepository.findAll();
   }
+
+  // METODO GUARDAR IMAGEN
+  public void saveImage(Long id, MultipartFile file) throws IOException {
+    Productos producto = getProducto(id);
+    if (producto != null) {
+      // Ruta donde se guardará la imagen
+      String uploadDir = "uploads/";
+      Path uploadPath = Paths.get(uploadDir);
+
+      // Crea el directorio si no existe
+      if (!uploadPath.toFile().exists()) {
+        uploadPath.toFile().mkdirs();
+      }
+
+      // Guarda el archivo en el sistema de archivos
+      File imageFile = new File(uploadPath.toFile(), file.getOriginalFilename());
+      try (FileOutputStream fos = new FileOutputStream(imageFile)) {
+        fos.write(file.getBytes());
+      }
+
+      // Actualiza la entidad Producto con la ruta de la imagen
+      producto.setImagePath(imageFile.getAbsolutePath());
+      productosRepository.save(producto);
+    }
+  }
+
 }

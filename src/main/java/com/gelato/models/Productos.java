@@ -46,4 +46,7 @@ public class Productos {
   @JoinColumn(name = "ID_relleno")
   private Rellenos relleno;
 
+
+  public void setImagePath(String absolutePath) {
+  }
 }

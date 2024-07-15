@@ -4,7 +4,9 @@ import com.gelato.models.Productos;
 import com.gelato.services.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -37,6 +39,16 @@ public class ProductosController {
   @DeleteMapping("/deleteProducto/{id}")
   public void deleteProducto(@PathVariable Long id) {
     productosService.deleteProducto(id);
+  }
+
+  @PostMapping("/uploadImage/{id}")
+  public String uploadImage(@PathVariable Long id, @RequestParam("imagen_producto") MultipartFile file) {
+    try {
+      productosService.saveImage(id, file);
+      return "Imagen subida exitosamente";
+    } catch (IOException e) {
+      return "Error subiendo la imagen: " + e.getMessage();
+    }
   }
 
 }
