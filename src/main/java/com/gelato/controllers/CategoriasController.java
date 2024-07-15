@@ -28,7 +28,7 @@ public class CategoriasController {
         return categoriasService.addCategoria(categorias);
     }
 
-    @PutMapping("/actualizarCategoria/{id}")
+    @PutMapping("/updateCategoria/{id}")
     public Categorias updateCategoria(@PathVariable Long id, @RequestBody Categorias categorias) {
         return categoriasService.updateCategoria(id, categorias);
     }

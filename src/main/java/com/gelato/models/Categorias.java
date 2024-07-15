@@ -12,14 +12,12 @@ import lombok.NoArgsConstructor;
 @Table(name = "categorias")
 public class Categorias {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID_categoria;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_categoria")
+  private Long idCategoria;
 
-    @Column(name = "nombre_categoria", nullable = false)
-    private String nombre_categoria;
-
-  //  RELACIONES
-//    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    private Productos productos;
+  @Column(name = "nombre_categoria", nullable = false)
+  private String nombreCategoria;
+  
 }

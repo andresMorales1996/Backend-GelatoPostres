@@ -29,7 +29,7 @@ public class RellenosController {
         return rellenosService.addRelleno(rellenos);
     }
 
-    @PutMapping("/actualizarRelleno/{id}")
+    @PutMapping("/updateRelleno/{id}")
     public Rellenos updateRelleno(@PathVariable Long id, @RequestBody Rellenos rellenos) {
         return rellenosService.updateRelleno(id, rellenos);
     }
