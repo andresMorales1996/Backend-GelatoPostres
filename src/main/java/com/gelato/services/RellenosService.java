@@ -21,7 +21,7 @@ public class RellenosService {
     return rellenosRepository.findAll();
   }
 
-  // MÉTODO BUSCA RELLENO POR ID
+  // MÉTODO BUSCAR RELLENO POR ID
   public Rellenos getRelleno(Long id) {
     return rellenosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Relleno no encontrada, intente con otro"));
   }

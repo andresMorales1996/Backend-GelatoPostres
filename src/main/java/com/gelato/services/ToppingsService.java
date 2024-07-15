@@ -20,7 +20,7 @@ public class ToppingsService {
     return toppingsRepository.findAll();
   }
 
-  // MÉTODO BUSCA TOPPING POR ID
+  // MÉTODO BUSCAR TOPPING POR ID
   public Toppings getToppings(Long id) {
     return toppingsRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Topping no encontrado, intente con otro"));
   }

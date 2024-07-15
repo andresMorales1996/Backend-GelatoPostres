@@ -19,7 +19,7 @@ public class SaboresService {
     return saboresRepository.findAll();
   }
 
-  // MÉTODO BUSCA SABOR POR ID
+  // MÉTODO BUSCAR SABOR POR ID
   public Sabores getSabor(Long id) {
     return saboresRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Sabor no encontrado, intente con otro"));
   }
@@ -29,7 +29,6 @@ public class SaboresService {
     return saboresRepository.save(nuevoSabores);
   }
 
-  //metodo para actualizar un Sabor
   // MÉTODO ACTUALIZAR SABOR
   public Sabores updateSabor(Long id, Sabores update) {
 

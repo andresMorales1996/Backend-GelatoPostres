@@ -14,7 +14,7 @@ public class Sabores {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_categoria")
+  @Column(name = "ID_sabor")
   private Long ID_sabor;
 
   @Column(name = "nombre_sabor", nullable = false)

@@ -19,7 +19,7 @@ public class DireccionEntregasService {
     return direccionEntregasRepository.findAll();
   }
 
-  // MÉTODO BUSCA DIRECCIONENTREGA POR ID
+  // MÉTODO BUSCAR DIRECCIONENTREGA POR ID
   public DireccionEntregas getDireccionEntrega(Long id) {
     return direccionEntregasRepository.findById(id).orElse(null);
   }

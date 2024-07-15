@@ -18,7 +18,7 @@ public class PedidosService {
     return pedidosRepository.findAll();
   }
 
-  // MÉTODO BUSCA PEDIDO POR ID
+  // MÉTODO BUSCAR PEDIDO POR ID
   public Pedidos getPedido(Long id) {
     return pedidosRepository.findById(id).orElse(null);
   }

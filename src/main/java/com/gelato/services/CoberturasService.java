@@ -20,7 +20,7 @@ public class CoberturasService {
     return coberturasRepository.findAll();
   }
 
-  // MÉTODO BUSCA COBERTURA POR ID
+  // MÉTODO BUSCAR COBERTURA POR ID
   public Coberturas getCobertura(Long id) {
     return coberturasRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cobertura no encontrada, intente con otro"));
   }
@@ -31,7 +31,6 @@ public class CoberturasService {
   }
 
   // MÉTODO ACTUALIZAR COBERTURA
-
   public Coberturas updateCobertura(Long id, Coberturas update) {
 
     Coberturas actualizarC = coberturasRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cobertura no encontrada, no es posible actualizarlo"));

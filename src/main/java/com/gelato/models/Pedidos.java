@@ -14,7 +14,7 @@ public class Pedidos {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_cobertura")
+  @Column(name = "ID_pedido")
   private Long ID_pedido;
 
   @Column(name = "fecha_pedido", nullable = false)

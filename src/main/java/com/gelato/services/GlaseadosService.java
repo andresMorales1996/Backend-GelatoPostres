@@ -20,7 +20,7 @@ public class GlaseadosService {
     return glaseadosRepository.findAll();
   }
 
-  // MÉTODO BUSCA GLASEADO POR ID
+  // MÉTODO BUSCAR GLASEADO POR ID
   public Glaseados getGlaseado(Long id) {
     return glaseadosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Glaseado no encontrado, intente con otro"));
   }

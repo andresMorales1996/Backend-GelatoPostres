@@ -18,7 +18,7 @@ public class MetodoPagoService {
     return metodoPagosRepository.findAll();
   }
 
-  // MÉTODO BUSCA METODOPAGO POR ID
+  // MÉTODO BUSCAR METODOPAGO POR ID
   public MetodoPagos getMetodoPago(Long id) {
     return metodoPagosRepository.findById(id).orElse(null);
   }

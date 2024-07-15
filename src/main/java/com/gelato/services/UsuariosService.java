@@ -18,7 +18,7 @@ public class UsuariosService {
     return usuariosRepository.findAll();
   }
 
-  // MÉTODO BUSCA USUARIO POR ID
+  // MÉTODO BUSCAR USUARIO POR ID
   public Usuarios getUsuario(Long id) {
     return usuariosRepository.findById(id).orElse(null);
   }

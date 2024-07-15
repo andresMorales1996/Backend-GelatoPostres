@@ -20,7 +20,7 @@ public class CategoriasService {
     return categoriasRepository.findAll();
   }
 
-  // MÉTODO BUSCA CATEGORÍA POR ID
+  // MÉTODO BUSCAR CATEGORÍA POR ID
   public Categorias getCategoria(Long id) {
     return categoriasRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cobertura no encontrada, intente con otro"));
   }

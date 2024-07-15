@@ -18,7 +18,7 @@ public class RolesService {
     return rolesRepository.findAll();
   }
 
-  // MÉTODO BUSCA ROL POR ID
+  // MÉTODO BUSCAR ROL POR ID
   public Roles getRol(Long id) {
     return rolesRepository.findById(id).orElse(null);
   }

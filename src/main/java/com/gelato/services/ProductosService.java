@@ -31,7 +31,7 @@ public class ProductosService {
     return productosRepository.findAll();
   }
 
-  // MÉTODO BUSCA PRODUCTO POR ID
+  // MÉTODO BUSCAR PRODUCTO POR ID
   public Productos getProducto(Long id) {
     return productosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Producto no encontrado"));
   }

@@ -14,7 +14,7 @@ public class Glaseados {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "glaseado")
+  @Column(name = "ID_glaseado")
   private Long ID_glaseado;
 
   @Column(name = "nombre_glaseado", nullable = false)

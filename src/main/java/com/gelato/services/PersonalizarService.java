@@ -20,7 +20,7 @@ public class PersonalizarService {
     return personalizarRepository.findAll();
   }
 
-  // MÉTODO BUSCA PERSONALIZAR POR ID
+  // MÉTODO BUSCAR PERSONALIZAR POR ID
   public Personalizar getPersonalizar(Long id) {
     return personalizarRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Personalizar no encontrado, intente con otro"));
   }

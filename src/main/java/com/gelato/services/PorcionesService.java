@@ -19,7 +19,7 @@ public class PorcionesService {
     return porcionesRepository.findAll();
   }
 
-  // MÉTODO BUSCA PORCION POR ID
+  // MÉTODO BUSCAR PORCION POR ID
   public Porciones getPorcion(Long id) {
     return porcionesRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Porcion no encontrada, intente con otro"));
   }
