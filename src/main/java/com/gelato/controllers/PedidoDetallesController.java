@@ -8,33 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/pedido-detalles")
+@RequestMapping("/pedidoDetalles/v1")
 public class PedidoDetallesController {
 
   @Autowired
   private PedidoDetallesService pedidoDetallesService;
 
-  @GetMapping
+  @GetMapping("allPedidoDetalles")
   public List<PedidoDetalles> getAllPedidoDetalles() {
     return pedidoDetallesService.getAllPedidoDetalles();
   }
 
-  @GetMapping("/{id}")
+  @GetMapping("/pedidoDetalle/{id}")
   public PedidoDetalles getPedidoDetalleById(@PathVariable Long id) {
     return pedidoDetallesService.getPedidoDetalleById(id);
   }
 
-  @PostMapping("/add")
+  @PostMapping("/createPedidoDetalle")
   public PedidoDetalles addPedidoDetalle(@RequestBody PedidoDetalles pedidoDetalle) {
     return pedidoDetallesService.addPedidoDetalle(pedidoDetalle);
   }
 
-  @PutMapping("/{id}")
+  @PutMapping("/updatePedidoDetalle/{id}")
   public PedidoDetalles updatePedidoDetalle(@PathVariable Long id, @RequestBody PedidoDetalles pedidoDetalleDetails) {
     return pedidoDetallesService.updatePedidoDetalle(id, pedidoDetalleDetails);
   }
 
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/deletePedidoDetalle/{id}")
   public void deletePedidoDetalle(@PathVariable Long id) {
     pedidoDetallesService.deletePedidoDetalle(id);
   }
