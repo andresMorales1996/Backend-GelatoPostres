@@ -15,8 +15,11 @@ public class PedidoDetalles {
   @Column(name = "ID_pedido_detalle")
   private Long ID_pedido_detalle;
 
-  @Column(name = "cantidad", nullable = false)
-  private int cantidad;
+  @Column(name = "cantidad_producto", nullable = false)
+  private int cantidad_producto;
+
+  @Column(name = "precio_producto", nullable = false)
+  private int precio_producto;
 
   //LLAVES FORÁNEAS
 //  @OneToOne
