@@ -29,10 +29,18 @@ public class RolesService {
   }
 
   // MÉTODO ACTUALIZAR ROL
+  public Roles updateRol(Long id, Roles update) {
+    Roles rol = getRol(id);
+    if (rol != null) {
+      rol.setNombre_rol(update.getNombre_rol());
+      return rolesRepository.save(rol);
+    } else {
+      return null;
+    }
+  }
 
   // MÉTODO ELIMINAR ROL 
   public void deleteRol(Long id) {
     rolesRepository.deleteById(id);
   }
-
 }
