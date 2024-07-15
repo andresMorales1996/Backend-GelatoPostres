@@ -25,8 +25,8 @@ public class ToppingsController {
   }
 
   @PostMapping("/createTopping")
-  public Toppings addTopping(@RequestBody Toppings nuevoTopping) {
-    return  toppingsService.addTopping(nuevoTopping);
+  public Toppings createTopping(@RequestBody Toppings nuevoTopping) {
+    return  toppingsService.createTopping(nuevoTopping);
   }
 
   @PutMapping("/updateTopping/{id}")

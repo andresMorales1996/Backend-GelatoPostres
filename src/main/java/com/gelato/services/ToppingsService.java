@@ -25,7 +25,7 @@ public class ToppingsService {
   }
 
   //Agregar nuevo Toppings
-  public Toppings addTopping(Toppings nuevoTopping){
+  public Toppings createTopping(Toppings nuevoTopping){
     return toppingsRepository.save(nuevoTopping);
   }
 

@@ -25,8 +25,8 @@ public class RellenosController {
     }
 
     @PostMapping("/createRelleno")
-    public Rellenos addRelleno(@RequestBody Rellenos rellenos) {
-        return rellenosService.addRelleno(rellenos);
+    public Rellenos createRelleno(@RequestBody Rellenos rellenos) {
+        return rellenosService.createRelleno(rellenos);
     }
 
     @PutMapping("/updateRelleno/{id}")

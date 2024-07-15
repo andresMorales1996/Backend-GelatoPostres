@@ -8,33 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/estado-pago")
+@RequestMapping("/pedidoEstados/v1")
 public class PedidoEstadosController {
 
   @Autowired
   private PedidoEstadosService pedidoEstadosService;
 
-  @GetMapping
+  @GetMapping("/allPedidoEstados")
   public List<PedidoEstados> getAllEstadosPago() {
     return pedidoEstadosService.getAllEstadosPago();
   }
 
-  @GetMapping("/{id}")
+  @GetMapping("/pedidoEstado/{id}")
   public PedidoEstados getEstadoPagoById(@PathVariable Long id) {
     return pedidoEstadosService.getEstadoPagoById(id);
   }
 
-  @PostMapping("/add")
-  public PedidoEstados addEstadoPago(@RequestBody PedidoEstados pedidoEstados) {
-    return pedidoEstadosService.addEstadoPago(pedidoEstados);
+  @PostMapping("/createEstadoPedido")
+  public PedidoEstados createEstadoPago(@RequestBody PedidoEstados pedidoEstados) {
+    return pedidoEstadosService.createEstadoPago(pedidoEstados);
   }
 
-  @PutMapping("/{id}")
+  @PutMapping("/updatePedidoEstado/{id}")
   public PedidoEstados updateEstadoPago(@PathVariable Long id, @RequestBody PedidoEstados pedidoEstadosDetails) {
     return pedidoEstadosService.updateEstadoPago(id, pedidoEstadosDetails);
   }
 
-  @DeleteMapping("/{id}")
+  @DeleteMapping("deletePedidoEstado/{id}")
   public void deleteEstadoPago(@PathVariable Long id) {
     pedidoEstadosService.deleteEstadoPago(id);
   }

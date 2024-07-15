@@ -25,7 +25,7 @@ public class CategoriasService {
     }
 
     // Agregar nueva Categoria
-    public Categorias addCategoria(Categorias categorias){
+    public Categorias createCategoria(Categorias categorias){
         return categoriasRepository.save(categorias);
     }
 
@@ -43,7 +43,7 @@ public class CategoriasService {
     // metodo para eliminar una Categoria
     public void deleteCategoria(Long id){
         Categorias eliminar =  categoriasRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Categoria no encontrada, no es posible eliminarlo"));
-        categoriasRepository.deleteById(id);
+        categoriasRepository.delete(eliminar);
     }
 
 }

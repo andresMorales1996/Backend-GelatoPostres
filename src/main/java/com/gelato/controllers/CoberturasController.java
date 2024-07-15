@@ -25,8 +25,8 @@ public class CoberturasController {
   }
 
   @PostMapping("/createCobertura")
-  public Coberturas addCobertura(@RequestBody Coberturas nuevoCoberturas) {
-    return  coberturasService.addCobertura(nuevoCoberturas);
+  public Coberturas createCobertura(@RequestBody Coberturas nuevoCoberturas) {
+    return  coberturasService.createCobertura(nuevoCoberturas);
   }
 
   @PutMapping("/updateCobertura/{id}")

@@ -26,11 +26,11 @@ public class PorcionesService {
     }
 
     //Agregar nueva Porcion
-    public Porciones addPorcion(Porciones porciones){
+    public Porciones createPorcion(Porciones porciones){
         return porcionesRepository.save(porciones);
     }
 
-    // meotodo para Actualizar una porcion
+    // metodo para Actualizar una porcion
     public Porciones updatePorcion(Long id, Porciones update){
         Porciones porciones = getPorcion(id);
         if(porciones != null){

@@ -25,8 +25,13 @@ public class PorcionesController {
     }
 
     @PostMapping("/createPorcion")
-    public Porciones addPorcion(@RequestBody Porciones porciones) {
-        return porcionesService.addPorcion(porciones);
+    public Porciones createPorcion(@RequestBody Porciones porciones) {
+        return porcionesService.createPorcion(porciones);
+    }
+
+    @PutMapping("/updatePorcion/{id}")
+    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
+        return porcionesService.updatePorcion(id, porciones);
     }
 
     @DeleteMapping("/deletePorcion/{id}")
@@ -34,8 +39,4 @@ public class PorcionesController {
         porcionesService.deletePorcion(id);
     }
 
-    @PutMapping("/{id}")
-    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
-        return porcionesService.updatePorcion(id, porciones);
-    }
 }

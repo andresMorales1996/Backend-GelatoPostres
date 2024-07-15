@@ -25,8 +25,8 @@ public class GlaseadosController {
   }
 
   @PostMapping("/createGlaseado")
-  public Glaseados addGlaseado(@RequestBody Glaseados nuevoGlaseado) {
-    return  glaseadosService.addGlaseado(nuevoGlaseado);
+  public Glaseados createGlaseado(@RequestBody Glaseados nuevoGlaseado) {
+    return  glaseadosService.createGlaseado(nuevoGlaseado);
   }
 
   @PutMapping("/updateGlaseado/{id}")

@@ -25,8 +25,8 @@ public class SaboresController {
   }
 
   @PostMapping("/createSabor")
-  public Sabores addSabor(@RequestBody Sabores nuevoSabores) {
-    return saboresService.addSabor(nuevoSabores);
+  public Sabores createSabor(@RequestBody Sabores nuevoSabores) {
+    return saboresService.createSabor(nuevoSabores);
   }
 
   @PutMapping("/updateSabor/{id}")

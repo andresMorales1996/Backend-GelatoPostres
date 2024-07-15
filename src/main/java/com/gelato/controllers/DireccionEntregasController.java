@@ -30,7 +30,7 @@ public class DireccionEntregasController {
     }
   }
   
-  @PostMapping("/add")
+  @PostMapping("/create")
   public ResponseEntity<DireccionEntregas> crearDireccionEntrega(@RequestBody DireccionEntregas direccionEntrega) {
     DireccionEntregas nuevaDireccionEntrega = direccionEntregasService.guardarDireccionesEntrega(direccionEntrega);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevaDireccionEntrega);

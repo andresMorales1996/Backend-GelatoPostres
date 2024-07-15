@@ -21,14 +21,14 @@ public class PedidoEstadosService {
     return pedidoEstadosRepository.findById(id).orElse(null);
   }
 
-  public PedidoEstados addEstadoPago(PedidoEstados pedidoEstados) {
+  public PedidoEstados createEstadoPago(PedidoEstados pedidoEstados) {
     return pedidoEstadosRepository.save(pedidoEstados);
   }
 
   public PedidoEstados updateEstadoPago(Long id, PedidoEstados pedidoEstadosDetails) {
     PedidoEstados pedidoEstados = pedidoEstadosRepository.findById(id).orElse(null);
     if (pedidoEstados != null) {
-      pedidoEstados.setNombre_estado_pago(pedidoEstadosDetails.getNombre_estado_pago());
+      pedidoEstados.setNombre_pedido_estado(pedidoEstadosDetails.getNombre_pedido_estado());
       return pedidoEstadosRepository.save(pedidoEstados);
     }
     return null;

@@ -27,7 +27,7 @@ public class RellenosService {
     }
 
     // Agregar nuevo relleno
-    public Rellenos addRelleno(Rellenos rellenos){
+    public Rellenos createRelleno(Rellenos rellenos){
         return rellenosRepository.save(rellenos);
     }
 

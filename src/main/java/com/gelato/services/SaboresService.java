@@ -25,7 +25,7 @@ public class SaboresService {
   }
 
   //Agregar nuevo sabor
-  public Sabores addSabor(Sabores nuevoSabores){
+  public Sabores createSabor(Sabores nuevoSabores){
     return saboresRepository.save(nuevoSabores);
   }
 

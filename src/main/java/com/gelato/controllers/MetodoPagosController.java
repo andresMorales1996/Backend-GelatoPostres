@@ -8,33 +8,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/metodo-pago")
+@RequestMapping("/metodoPagos/v1")
 public class MetodoPagosController {
 
   @Autowired
   private MetodoPagoService metodoPagoService;
 
-  @GetMapping
+  @GetMapping("allMetodoPagos")
   public List<MetodoPagos> getAllMetodosPago() {
     return metodoPagoService.getAllMetodosPago();
   }
 
-  @GetMapping("/{id}")
+  @GetMapping("/metodoPago{id}")
   public MetodoPagos getMetodoPagoById(@PathVariable Long id) {
     return metodoPagoService.getMetodoPagoById(id);
   }
 
-  @PostMapping("/add")
-  public MetodoPagos addMetodoPago(@RequestBody MetodoPagos metodoPagos) {
-    return metodoPagoService.addMetodoPago(metodoPagos);
+  @PostMapping("/createMetodoPago")
+  public MetodoPagos createMetodoPago(@RequestBody MetodoPagos metodoPagos) {
+    return metodoPagoService.createMetodoPago(metodoPagos);
   }
 
-  @PutMapping("/{id}")
+  @PutMapping("/updateMetodoPago/{id}")
   public MetodoPagos updateMetodoPago(@PathVariable Long id, @RequestBody MetodoPagos metodoPagosDetails) {
     return metodoPagoService.updateMetodoPago(id, metodoPagosDetails);
   }
 
-  @DeleteMapping("/{id}")
+  @DeleteMapping("/deleteMetodoPago/{id}")
   public void deleteMetodoPago(@PathVariable Long id) {
     metodoPagoService.deleteMetodoPago(id);
   }

@@ -7,11 +7,12 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "metodo_pago")
+@Table(name = "metodo_pagos")
 public class MetodoPagos {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_metodo_pago")
   private Long ID_metodo_pago;
 
   @Column(name = "nombre_metodo_pago", nullable = false)
