@@ -35,7 +35,7 @@ public class RellenosService {
     public Rellenos updateRelleno(Long id, Rellenos updateRellenos){
         Rellenos rellenos = getRelleno(id);
         if(rellenos != null){
-            rellenos.setNombreRelleno(updateRellenos.getNombreRelleno());
+            rellenos.setNombre_relleno(updateRellenos.getNombre_relleno());
             return rellenosRepository.save(rellenos);
         } else {
             return null;

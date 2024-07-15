@@ -33,7 +33,7 @@ public class CategoriasService {
     public Categorias updateCategoria(Long id, Categorias update){
         Categorias categorias = getCategoria(id);
         if(categorias != null){
-            categorias.setNombreCategoria(update.getNombreCategoria());
+            categorias.setNombre_categoria(update.getNombre_categoria());
             return categoriasRepository.save(categorias);
         } else {
             return null;

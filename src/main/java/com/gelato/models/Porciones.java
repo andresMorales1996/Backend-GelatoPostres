@@ -15,12 +15,12 @@ public class Porciones {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ID_porcion")
-  private Long idPorcion;
+  private Long ID_porcion;
 
   @Column(name = "nombre_porcion", nullable = false)
-  private String nombrePorcion;
+  private String nombre_porcion;
 
   @Column(name = "precio_porcion", nullable = false)
-  private double precioPorcion;
+  private double precio_porcion;
 
 }

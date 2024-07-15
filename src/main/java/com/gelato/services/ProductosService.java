@@ -41,11 +41,11 @@ public class ProductosService {
     public Productos updateProducto(Long id, Productos update) {
         Productos producto = getProducto(id);
         if (producto != null) {
-            producto.setNombreProducto(update.getNombreProducto());
-            producto.setDescripcionProducto(update.getDescripcionProducto());
-            producto.setEstadoProducto(update.getEstadoProducto());
-            producto.setImagenProducto(update.getImagenProducto());
-            producto.setPrecioProducto(update.getPrecioProducto());
+            producto.setNombre_producto(update.getNombre_producto());
+            producto.setDescripcion_producto(update.getDescripcion_producto());
+            producto.setEstado_producto(update.getEstado_producto());
+            producto.setImagen_producto(update.getImagen_producto());
+            producto.setPrecio_producto(update.getPrecio_producto());
             producto.setCategoria(update.getCategoria());
             producto.setPorcion(update.getPorcion());
             producto.setRelleno(update.getRelleno());

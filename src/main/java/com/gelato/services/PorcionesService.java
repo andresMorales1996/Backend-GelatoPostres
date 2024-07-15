@@ -34,8 +34,8 @@ public class PorcionesService {
     public Porciones updatePorcion(Long id, Porciones update){
         Porciones porciones = getPorcion(id);
         if(porciones != null){
-            porciones.setNombrePorcion(update.getNombrePorcion());
-            porciones.setPrecioPorcion(update.getPrecioPorcion());
+            porciones.setNombre_porcion(update.getNombre_porcion());
+            porciones.setPrecio_porcion(update.getPrecio_porcion());
             return porcionesRepository.save(porciones);
         } else {
             return null;
