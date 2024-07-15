@@ -21,7 +21,7 @@ public class PedidoDetallesController {
 
   @GetMapping("/pedidoDetalle/{id}")
   public PedidoDetalles getPedidoDetalleById(@PathVariable Long id) {
-    return pedidoDetallesService.getPedidoDetalleById(id);
+    return pedidoDetallesService.getPedidoDetalle(id);
   }
 
   @PostMapping("/createPedidoDetalle")
@@ -38,4 +38,5 @@ public class PedidoDetallesController {
   public void deletePedidoDetalle(@PathVariable Long id) {
     pedidoDetallesService.deletePedidoDetalle(id);
   }
+
 }

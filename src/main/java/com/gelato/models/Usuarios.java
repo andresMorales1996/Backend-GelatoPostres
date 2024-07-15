@@ -12,6 +12,7 @@ public class Usuarios {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_cobertura")
   private Long ID_usuario;
 
   @Column(name = "nombre_usuario", nullable = false)

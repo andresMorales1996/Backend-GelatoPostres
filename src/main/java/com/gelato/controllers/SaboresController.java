@@ -15,12 +15,12 @@ public class SaboresController {
   private SaboresService saboresService;
 
   @GetMapping("/allSabores")
-  public List<Sabores> getAllSabor(){
-    return  saboresService.getAllSabores();
+  public List<Sabores> getAllSabor() {
+    return saboresService.getAllSabores();
   }
 
   @GetMapping("/sabor/{id}")
-  public Sabores getSabor(@PathVariable Long id){
+  public Sabores getSabor(@PathVariable Long id) {
     return saboresService.getSabor(id);
   }
 
@@ -31,11 +31,12 @@ public class SaboresController {
 
   @PutMapping("/updateSabor/{id}")
   public Sabores updateSabor(@PathVariable Long id, @RequestBody Sabores actualizado) {
-    return saboresService.updateSabor(id,actualizado);
+    return saboresService.updateSabor(id, actualizado);
   }
 
   @DeleteMapping("/deleteSabor/{id}")
-  public void deleteSabor(@PathVariable Long id){
+  public void deleteSabor(@PathVariable Long id) {
     saboresService.deleteSabor(id);
   }
+
 }

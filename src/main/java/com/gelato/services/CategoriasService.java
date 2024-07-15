@@ -11,39 +11,40 @@ import java.util.List;
 
 @Service
 public class CategoriasService {
-    @Autowired
-    private CategoriasRepository categoriasRepository;
 
-    // metodo para mostrar todas las categorias
-    public List<Categorias> getAllCategorias(){
-        return categoriasRepository.findAll();
-    }
+  @Autowired
+  private CategoriasRepository categoriasRepository;
 
-    // metodo para mostrar una Categoria en especifico y ver si existe
-    public Categorias getCategoria(Long id) {
-        return categoriasRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Cobertura no encontrada, intente con otro"));
-    }
+  // MÉTODO LISTAR CATEGORÍAS
+  public List<Categorias> getAllCategorias() {
+    return categoriasRepository.findAll();
+  }
 
-    // Agregar nueva Categoria
-    public Categorias createCategoria(Categorias categorias){
-        return categoriasRepository.save(categorias);
-    }
+  // MÉTODO BUSCA CATEGORÍA POR ID
+  public Categorias getCategoria(Long id) {
+    return categoriasRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Cobertura no encontrada, intente con otro"));
+  }
 
-    // metodo para actualizar una Categoria
-    public Categorias updateCategoria(Long id, Categorias update){
-        Categorias categorias = getCategoria(id);
-        if(categorias != null){
-            categorias.setNombre_categoria(update.getNombre_categoria());
-            return categoriasRepository.save(categorias);
-        } else {
-            return null;
-        }
-    }
+  // MÉTODO AGREGAR CATEGORÍA
+  public Categorias createCategoria(Categorias categorias) {
+    return categoriasRepository.save(categorias);
+  }
 
-    // metodo para eliminar una Categoria
-    public void deleteCategoria(Long id){
-        Categorias eliminar =  categoriasRepository.findById(id).orElseThrow(()->new EntityNotFoundException("Categoria no encontrada, no es posible eliminarlo"));
-        categoriasRepository.delete(eliminar);
+  // MÉTODO ACTUALIZAR CATEGORÍA
+  public Categorias updateCategoria(Long id, Categorias update) {
+    Categorias categorias = getCategoria(id);
+    if (categorias != null) {
+      categorias.setNombre_categoria(update.getNombre_categoria());
+      return categoriasRepository.save(categorias);
+    } else {
+      return null;
     }
+  }
+
+  // MÉTODO ELIMINAR CATEGORÍA
+  public void deleteCategoria(Long id) {
+    Categorias eliminar = categoriasRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Categoria no encontrada, no es posible eliminarlo"));
+    categoriasRepository.delete(eliminar);
+  }
 
 }

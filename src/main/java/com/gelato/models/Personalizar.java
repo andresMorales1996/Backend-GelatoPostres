@@ -26,7 +26,7 @@ public class Personalizar {
   @Column(name = "adicionales_personalizar")
   private String adicionales_personalizar;
 
-  //LLaves foraneas
+  //LLAVES FORÁNEAS
   // @OneToMany()
   // @JoinColumn(name = "personalizar_id", nullable = false)
   // private List<Relleno> rellenos;
@@ -50,52 +50,4 @@ public class Personalizar {
   // @OneToOne
   // @JoinColumn(name = "ID_toppings", nullable = false)
   // private Toppings toppings;
-
-
-  //  RELACIONES
-//  @ManyToOne()
-//  @JoinColumn(name = "relleno_id", nullable = false)
-//  private Relleno relleno;
-//
-//  @ManyToOne()
-//  @JoinColumn(name = "porciones_id", nullable = false)
-//  private Porciones porciones;
-//
-//  @OneToOne
-//  @JoinColumn(name = "ID_glaseados", nullable = false)
-//  private Glaseados glaseados;
-//
-//  @OneToOne
-//  @JoinColumn(name = "ID_sabor", nullable = false)
-//  private Sabor sabor;
-//
-//  @OneToOne
-//  @JoinColumn(name = "id_cobertura", nullable = false)
-//  private Cobertura cobertura;
-//
-//  @OneToOne
-//  @JoinColumn(name = "ID_toppings", nullable = false)
-//  private Toppings toppings;
-
-
-//
-//  @OneToMany( mappedBy = "personalizar")
-//  private List<Relleno> relleno = new ArrayList<>();
-//
-//  @OneToMany( mappedBy = "personalizar")
-//  private List<Porciones> porciones = new ArrayList<>();
-
-//  @OneToOne( mappedBy = "personalizar")
-//  private Glaseados glaseados;
-
-//  @OneToOne( mappedBy = "personalizar")
-//  private Glaseados sabor;
-//
-//  @OneToOne( mappedBy = "personalizar")
-//  private Glaseados cobertura;
-//
-//  @OneToOne( mappedBy = "personalizar")
-//  private Glaseados toppings;
-
-
 }

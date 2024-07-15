@@ -12,12 +12,13 @@ public class PedidoDetalles {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "ID_cobertura")
   private Long ID_pedido_detalle;
 
   @Column(name = "cantidad", nullable = false)
   private int cantidad;
 
-  //  RELACIONES
+  //LLAVES FORÁNEAS
 //  @OneToOne
 //  @JoinColumn(name = "ID_pedido", nullable = false)
 //  private Pedido pedido;

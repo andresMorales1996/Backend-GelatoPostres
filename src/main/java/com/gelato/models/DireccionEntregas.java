@@ -7,17 +7,18 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "direcciones_entrega")
+@Table(name = "direccion_entregas")
 public class DireccionEntregas {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long ID_direcciones_entrega;
+  @Column(name = "ID_direccion_entrega")
+  private Long ID_direccion_entrega;
 
   @Column(name = "direccion", nullable = false)
   private String direccion;
 
-  //  RELACIONES
+  //LLAVES FORÁNEAS
 //  @OneToOne
 //  @JoinColumn(name = "ID_usuario", referencedColumnName = "ID_usuario", nullable = false)
 //  private Usuario usuario;

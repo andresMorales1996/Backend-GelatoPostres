@@ -22,5 +22,5 @@ public class Rellenos {
 
   @Column(name = "precio_relleno", nullable = false)
   private double precio_relleno;
-  
+
 }

@@ -13,18 +13,22 @@ public class PedidoEstadosService {
   @Autowired
   private PedidoEstadosRepository pedidoEstadosRepository;
 
+  // MÉTODO LISTAR PEDIDOESTADOS
   public List<PedidoEstados> getAllEstadosPago() {
     return pedidoEstadosRepository.findAll();
   }
 
-  public PedidoEstados getEstadoPagoById(Long id) {
+  // MÉTODO BUSCA PEDIDOESTADO POR ID
+  public PedidoEstados getEstadoPago(Long id) {
     return pedidoEstadosRepository.findById(id).orElse(null);
   }
 
+  // MÉTODO AGREGAR PEDIDOESTADO
   public PedidoEstados createEstadoPago(PedidoEstados pedidoEstados) {
     return pedidoEstadosRepository.save(pedidoEstados);
   }
 
+  // MÉTODO ACTUALIZAR PEDIDOESTADO
   public PedidoEstados updateEstadoPago(Long id, PedidoEstados pedidoEstadosDetails) {
     PedidoEstados pedidoEstados = pedidoEstadosRepository.findById(id).orElse(null);
     if (pedidoEstados != null) {
@@ -34,7 +38,9 @@ public class PedidoEstadosService {
     return null;
   }
 
+  // MÉTODO ELIMINAR PEDIDOESTADO
   public void deleteEstadoPago(Long id) {
     pedidoEstadosRepository.deleteById(id);
   }
+
 }

@@ -10,49 +10,49 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/roles")
+@RequestMapping("/roles/v1")
 public class RolesController {
   @Autowired
   private RolesService rolesService;
-  
-  @GetMapping
+
+  @GetMapping("/allRoles")
   public List<Roles> obtenerTodosRoles() {
-    return rolesService.obtenerTodosRoles();
+    return rolesService.getAllRoles();
   }
-  
-  @GetMapping("/{id}")
+
+  @GetMapping("/rol/{id}")
   public ResponseEntity<Roles> obtenerRolPorId(@PathVariable Long id) {
-    Roles roles = rolesService.obtenerRolId(id);
+    Roles roles = rolesService.getRol(id);
     if (roles != null) {
       return ResponseEntity.ok(roles);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @PostMapping("/create")
+
+  @PostMapping("/createRol")
   public ResponseEntity<Roles> crearRol(@RequestBody Roles roles) {
-    Roles nuevoRoles = rolesService.guardarRol(roles);
+    Roles nuevoRoles = rolesService.createRol(roles);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevoRoles);
   }
-  
-  @PutMapping("/{id}")
+
+  @PutMapping("/updateRol/{id}")
   public ResponseEntity<Roles> modificarRol(@PathVariable Long id, @RequestBody Roles roles) {
-    Roles rolesExistente = rolesService.obtenerRolId(id);
+    Roles rolesExistente = rolesService.getRol(id);
     if (rolesExistente != null) {
       roles.setID_rol(id);
-      rolesService.guardarRol(roles);
+      rolesService.createRol(roles);
       return ResponseEntity.ok(roles);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @DeleteMapping("/{id}")
+
+  @DeleteMapping("/deleteRol/{id}")
   public ResponseEntity<Void> eliminarRol(@PathVariable Long id) {
-    Roles roles = rolesService.obtenerRolId(id);
+    Roles roles = rolesService.getRol(id);
     if (roles != null) {
-      rolesService.borrarRol(id);
+      rolesService.deleteRol(id);
       return ResponseEntity.noContent().build();
     } else {
       return ResponseEntity.notFound().build();

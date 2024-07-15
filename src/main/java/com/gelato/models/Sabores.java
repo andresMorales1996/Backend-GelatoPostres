@@ -20,7 +20,7 @@ public class Sabores {
   @Column(name = "nombre_sabor", nullable = false)
   private String nombre_sabor;
 
-  @Column(name = "descripcion_sabor", nullable = false)
-  private String descripcion_sabor;
-  
+  @Column(name = "precio_sabor", nullable = false)
+  private String precio_sabor;
+
 }

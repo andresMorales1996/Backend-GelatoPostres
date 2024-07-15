@@ -10,49 +10,49 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/usuario")
+@RequestMapping("/usuarios/v1")
 public class UsuariosController {
   @Autowired
   private UsuariosService usuariosService;
-  
-  @GetMapping
+
+  @GetMapping("/allUsuarios")
   public List<Usuarios> obtenerTodosUsuarios() {
-    return usuariosService.obtenerTodosUsuarios();
+    return usuariosService.getAllUsuarios();
   }
-  
-  @GetMapping("/{id}")
+
+  @GetMapping("/usuario/{id}")
   public ResponseEntity<Usuarios> obtenerUsuarioId(@PathVariable Long id) {
-    Usuarios usuarios = usuariosService.obtenerUsuarioId(id);
+    Usuarios usuarios = usuariosService.getUsuario(id);
     if (usuarios != null) {
       return ResponseEntity.ok(usuarios);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @PostMapping("/create")
+
+  @PostMapping("/createUsuario")
   public ResponseEntity<Usuarios> crearUsuario(@RequestBody Usuarios usuarios) {
-    Usuarios nuevoUsuarios = usuariosService.guardarUsuario(usuarios);
+    Usuarios nuevoUsuarios = usuariosService.createUsuario(usuarios);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuarios);
   }
-  
-  @PutMapping("/{id}")
+
+  @PutMapping("/updateUsuario/{id}")
   public ResponseEntity<Usuarios> modificarUsuario(@PathVariable Long id, @RequestBody Usuarios usuarios) {
-    Usuarios usuariosExistente = usuariosService.obtenerUsuarioId(id);
+    Usuarios usuariosExistente = usuariosService.getUsuario(id);
     if (usuariosExistente != null) {
       usuarios.setID_usuario(id);
-      usuariosService.guardarUsuario(usuarios);
+      usuariosService.createUsuario(usuarios);
       return ResponseEntity.ok(usuarios);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @DeleteMapping("/{id}")
+
+  @DeleteMapping("/deleteUsuario/{id}")
   public ResponseEntity<Void> eliminarUsuario(@PathVariable Long id) {
-    Usuarios usuarios = usuariosService.obtenerUsuarioId(id);
+    Usuarios usuarios = usuariosService.getUsuario(id);
     if (usuarios != null) {
-      usuariosService.borrarUsuario(id);
+      usuariosService.deleteUsuario(id);
       return ResponseEntity.noContent().build();
     } else {
       return ResponseEntity.notFound().build();

@@ -10,52 +10,54 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/pedido")
+@RequestMapping("/pedidos/v1")
 public class PedidosController {
+
   @Autowired
   private PedidosService pedidosService;
-  
-  @GetMapping
-  public List<Pedidos> obtenerTodosPedidos() {
-    return pedidosService.obtenerTodosPedidos();
+
+  @GetMapping("/allPedidos")
+  public List<Pedidos> getAllPedido() {
+    return pedidosService.getAllPedidos();
   }
-  
-  @GetMapping("/{id}")
-  public ResponseEntity<Pedidos> obtenerPedidoPorId(@PathVariable Long id) {
-    Pedidos pedidos = pedidosService.obtenerPedidoId(id);
+
+  @GetMapping("/pedido/{id}")
+  public ResponseEntity<Pedidos> getPedido(@PathVariable Long id) {
+    Pedidos pedidos = pedidosService.getPedido(id);
     if (pedidos != null) {
       return ResponseEntity.ok(pedidos);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @PostMapping("/create")
-  public ResponseEntity<Pedidos> crearPedido(@RequestBody Pedidos pedidos) {
-    Pedidos nuevoPedidos = pedidosService.guardarPedido(pedidos);
+
+  @PostMapping("/createPedido")
+  public ResponseEntity<Pedidos> createPedido(@RequestBody Pedidos pedidos) {
+    Pedidos nuevoPedidos = pedidosService.createPedido(pedidos);
     return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPedidos);
   }
-  
-  @PutMapping("/{id}")
-  public ResponseEntity<Pedidos> modificarPedido(@PathVariable Long id, @RequestBody Pedidos pedidos) {
-    Pedidos pedidosExistente = pedidosService.obtenerPedidoId(id);
+
+  @PutMapping("/updatePedido/{id}")
+  public ResponseEntity<Pedidos> updatePedido(@PathVariable Long id, @RequestBody Pedidos pedidos) {
+    Pedidos pedidosExistente = pedidosService.getPedido(id);
     if (pedidosExistente != null) {
       pedidos.setID_pedido(id);
-      pedidosService.guardarPedido(pedidos);
+      pedidosService.createPedido(pedidos);
       return ResponseEntity.ok(pedidos);
     } else {
       return ResponseEntity.notFound().build();
     }
   }
-  
-  @DeleteMapping("/{id}")
-  public ResponseEntity<Void> eliminarPedido(@PathVariable Long id) {
-    Pedidos pedidos = pedidosService.obtenerPedidoId(id);
+
+  @DeleteMapping("/deletePedido/{id}")
+  public ResponseEntity<Void> deletePedido(@PathVariable Long id) {
+    Pedidos pedidos = pedidosService.getPedido(id);
     if (pedidos != null) {
-      pedidosService.borrarPedido(id);
+      pedidosService.deletePedido(id);
       return ResponseEntity.noContent().build();
     } else {
       return ResponseEntity.notFound().build();
     }
   }
+
 }

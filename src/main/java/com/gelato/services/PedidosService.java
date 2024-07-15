@@ -9,22 +9,30 @@ import java.util.List;
 
 @Service
 public class PedidosService {
+
   @Autowired
   private PedidosRepository pedidosRepository;
-  
-  public List<Pedidos> obtenerTodosPedidos() {
+
+  // MÉTODO LISTAR PEDIDOS
+  public List<Pedidos> getAllPedidos() {
     return pedidosRepository.findAll();
   }
-  
-  public Pedidos obtenerPedidoId(Long id) {
+
+  // MÉTODO BUSCA PEDIDO POR ID
+  public Pedidos getPedido(Long id) {
     return pedidosRepository.findById(id).orElse(null);
   }
-  
-  public Pedidos guardarPedido(Pedidos pedidos) {
+
+  // MÉTODO AGREGAR PEDIDO
+  public Pedidos createPedido(Pedidos pedidos) {
     return pedidosRepository.save(pedidos);
   }
-  
-  public void borrarPedido(Long id) {
+
+  // MÉTODO ACTUALIZAR PEDIDO
+
+  // MÉTODO ELIMINAR PEDIDO  
+  public void deletePedido(Long id) {
     pedidosRepository.deleteById(id);
   }
+
 }

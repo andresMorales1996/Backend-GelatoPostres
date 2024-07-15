@@ -9,22 +9,30 @@ import java.util.List;
 
 @Service
 public class UsuariosService {
+
   @Autowired
   private UsuariosRepository usuariosRepository;
-  
-  public List<Usuarios> obtenerTodosUsuarios() {
+
+  // MÉTODO LISTAR USUARIOS
+  public List<Usuarios> getAllUsuarios() {
     return usuariosRepository.findAll();
   }
-  
-  public Usuarios obtenerUsuarioId(Long id) {
+
+  // MÉTODO BUSCA USUARIO POR ID
+  public Usuarios getUsuario(Long id) {
     return usuariosRepository.findById(id).orElse(null);
   }
-  
-  public Usuarios guardarUsuario(Usuarios usuarios) {
+
+  // MÉTODO AGREGAR USUARIO
+  public Usuarios createUsuario(Usuarios usuarios) {
     return usuariosRepository.save(usuarios);
   }
-  
-  public void borrarUsuario(Long id) {
+
+  // MÉTODO ACTUALIZAR USUARIO
+
+  // MÉTODO ELIMINAR USUARIO  
+  public void deleteUsuario(Long id) {
     usuariosRepository.deleteById(id);
   }
+
 }

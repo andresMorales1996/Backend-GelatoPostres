@@ -11,35 +11,32 @@ import java.util.List;
 @RequestMapping("/rellenos/v1")
 public class RellenosController {
 
-    @Autowired
-    private RellenosService rellenosService;
+  @Autowired
+  private RellenosService rellenosService;
 
-    @GetMapping("/allRellenos")
-    public List<Rellenos> getAllRellenos() {
-        return rellenosService.getAllRellenos();
-    }
+  @GetMapping("/allRellenos")
+  public List<Rellenos> getAllRellenos() {
+    return rellenosService.getAllRellenos();
+  }
 
-    @GetMapping("/relleno/{id}")
-    public Rellenos getRelleno(@PathVariable Long id){
-        return rellenosService.getRelleno(id);
-    }
+  @GetMapping("/relleno/{id}")
+  public Rellenos getRelleno(@PathVariable Long id) {
+    return rellenosService.getRelleno(id);
+  }
 
-    @PostMapping("/createRelleno")
-    public Rellenos createRelleno(@RequestBody Rellenos rellenos) {
-        return rellenosService.createRelleno(rellenos);
-    }
+  @PostMapping("/createRelleno")
+  public Rellenos createRelleno(@RequestBody Rellenos rellenos) {
+    return rellenosService.createRelleno(rellenos);
+  }
 
-    @PutMapping("/updateRelleno/{id}")
-    public Rellenos updateRelleno(@PathVariable Long id, @RequestBody Rellenos rellenos) {
-        return rellenosService.updateRelleno(id, rellenos);
-    }
+  @PutMapping("/updateRelleno/{id}")
+  public Rellenos updateRelleno(@PathVariable Long id, @RequestBody Rellenos rellenos) {
+    return rellenosService.updateRelleno(id, rellenos);
+  }
 
-    @DeleteMapping("/deleteRelleno/{id}")
-    public void deleteRelleno(@PathVariable Long id){
-        rellenosService.deleteRelleno(id);
-    }
-
-
-
+  @DeleteMapping("/deleteRelleno/{id}")
+  public void deleteRelleno(@PathVariable Long id) {
+    rellenosService.deleteRelleno(id);
+  }
 
 }

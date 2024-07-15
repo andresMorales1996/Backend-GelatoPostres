@@ -21,7 +21,7 @@ public class MetodoPagosController {
 
   @GetMapping("/metodoPago{id}")
   public MetodoPagos getMetodoPagoById(@PathVariable Long id) {
-    return metodoPagoService.getMetodoPagoById(id);
+    return metodoPagoService.getMetodoPago(id);
   }
 
   @PostMapping("/createMetodoPago")
@@ -38,4 +38,5 @@ public class MetodoPagosController {
   public void deleteMetodoPago(@PathVariable Long id) {
     metodoPagoService.deleteMetodoPago(id);
   }
+
 }

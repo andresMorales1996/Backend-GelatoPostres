@@ -11,32 +11,32 @@ import java.util.List;
 @RequestMapping("/porciones/v1")
 public class PorcionesController {
 
-    @Autowired
-    private PorcionesService porcionesService;
+  @Autowired
+  private PorcionesService porcionesService;
 
-    @GetMapping("/allPorciones")
-    public List<Porciones> getAllPorciones() {
-        return porcionesService.getAllPorciones();
-    }
+  @GetMapping("/allPorciones")
+  public List<Porciones> getAllPorciones() {
+    return porcionesService.getAllPorciones();
+  }
 
-    @GetMapping("/porcion/{id}")
-    public Porciones getPorcion(@PathVariable Long id){
-        return porcionesService.getPorcion(id);
-    }
+  @GetMapping("/porcion/{id}")
+  public Porciones getPorcion(@PathVariable Long id) {
+    return porcionesService.getPorcion(id);
+  }
 
-    @PostMapping("/createPorcion")
-    public Porciones createPorcion(@RequestBody Porciones porciones) {
-        return porcionesService.createPorcion(porciones);
-    }
+  @PostMapping("/createPorcion")
+  public Porciones createPorcion(@RequestBody Porciones porciones) {
+    return porcionesService.createPorcion(porciones);
+  }
 
-    @PutMapping("/updatePorcion/{id}")
-    public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
-        return porcionesService.updatePorcion(id, porciones);
-    }
+  @PutMapping("/updatePorcion/{id}")
+  public Porciones updatePorcion(@PathVariable Long id, @RequestBody Porciones porciones) {
+    return porcionesService.updatePorcion(id, porciones);
+  }
 
-    @DeleteMapping("/deletePorcion/{id}")
-    public void deletePorcion(@PathVariable Long id){
-        porcionesService.deletePorcion(id);
-    }
+  @DeleteMapping("/deletePorcion/{id}")
+  public void deletePorcion(@PathVariable Long id) {
+    porcionesService.deletePorcion(id);
+  }
 
 }
