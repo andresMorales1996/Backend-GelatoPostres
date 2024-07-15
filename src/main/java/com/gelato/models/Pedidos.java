@@ -20,6 +20,9 @@ public class Pedidos {
   @Column(name = "fecha_pedido", nullable = false)
   private Date fecha_pedido;
 
+  @Column(name = "fecha_entrega", nullable = false)
+  private Date fecha_entrega;
+
   @Column(name = "total_pedido", nullable = false)
   private int total_pedido;
 

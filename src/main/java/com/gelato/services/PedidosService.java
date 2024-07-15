@@ -1,5 +1,6 @@
 package com.gelato.services;
 
+import com.gelato.models.MetodoPagos;
 import com.gelato.models.Pedidos;
 import com.gelato.repositories.PedidosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,16 @@ public class PedidosService {
   }
 
   // MÉTODO ACTUALIZAR PEDIDO
-
+  public Pedidos updatePedido(Long id, Pedidos update) {
+    Pedidos pedidos = pedidosRepository.findById(id).orElse(null);
+    if (pedidos != null) {
+      pedidos.setFecha_pedido(update.getFecha_pedido());
+      pedidos.setFecha_entrega(update.getFecha_entrega());
+      pedidos.setTotal_pedido(update.getTotal_pedido());
+      return pedidosRepository.save(pedidos);
+    }
+    return null;
+  }
   // MÉTODO ELIMINAR PEDIDO  
   public void deletePedido(Long id) {
     pedidosRepository.deleteById(id);

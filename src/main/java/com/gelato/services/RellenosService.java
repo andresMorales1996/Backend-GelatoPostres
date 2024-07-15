@@ -1,7 +1,5 @@
 package com.gelato.services;
 
-
-import com.gelato.models.Categorias;
 import com.gelato.models.Rellenos;
 import com.gelato.repositories.RellenosRepository;
 import jakarta.persistence.EntityNotFoundException;
