@@ -29,10 +29,11 @@ public class PedidoDetallesService {
   }
 
   // MÉTODO ACTUALIZAR PEDIDODETALLE
-  public PedidoDetalles updatePedidoDetalle(Long id, PedidoDetalles pedidoDetalleDetails) {
+  public PedidoDetalles updatePedidoDetalle(Long id, PedidoDetalles update) {
     PedidoDetalles pedidoDetalle = pedidoDetallesRepository.findById(id).orElse(null);
     if (pedidoDetalle != null) {
-      pedidoDetalle.setCantidad(pedidoDetalleDetails.getCantidad());
+      pedidoDetalle.setCantidad_producto(update.getCantidad_producto());
+      pedidoDetalle.setPrecio_producto(update.getPrecio_producto());
       return pedidoDetallesRepository.save(pedidoDetalle);
     }
     return null;
