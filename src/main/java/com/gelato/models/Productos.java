@@ -1,5 +1,7 @@
 package com.gelato.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,18 +35,5 @@ public class Productos {
   @Column(name = "precio_producto", nullable = false)
   private double precio_producto;
 
-
-  //  RELACIONES
-//    @OneToOne
-//    @JoinColumn(name = "ID_categoria", nullable = false)
-//    private Categoria categoria;
-//
-//    @OneToOne
-//    @JoinColumn(name = "ID_relleno", nullable = false)
-//    private Relleno relleno;
-//
-//    @OneToOne
-//    @JoinColumn(name = "ID_porcion", nullable = false)
-//    private Porciones porcion;
 
 }

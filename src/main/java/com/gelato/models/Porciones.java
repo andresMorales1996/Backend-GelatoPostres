@@ -1,5 +1,6 @@
 package com.gelato.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,13 +24,11 @@ public class Porciones {
   private double precio_porcion;
 
   //  RELACIONES
-//    @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    private Productos productos;
-//
-//    @OneToOne
-//    @JoinColumn(name = "porciones_ID_porciones", nullable = false)
-//    private Porciones porciones;
-//
+  @OneToOne(mappedBy = "porciones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+  @JsonBackReference
+  private Productos productos;
+
+
 //    @OneToMany( mappedBy = "porciones" )
 //    private List<Personalizar> personalizar;
 }

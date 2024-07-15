@@ -1,10 +1,7 @@
 package com.gelato.services;
 
-import com.gelato.models.Coberturas;
 import com.gelato.models.Porciones;
-import com.gelato.models.Rellenos;
 import com.gelato.repositories.PorcionesRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
