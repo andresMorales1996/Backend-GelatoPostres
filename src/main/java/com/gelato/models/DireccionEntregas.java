@@ -15,8 +15,8 @@ public class DireccionEntregas {
   @Column(name = "ID_direccion_entrega")
   private Long ID_direccion_entrega;
 
-  @Column(name = "direccion", nullable = false)
-  private String direccion;
+  @Column(name = "direccion_entrega", nullable = false)
+  private String direccion_entrega;
 
   //LLAVES FORÁNEAS
 //  @OneToOne
