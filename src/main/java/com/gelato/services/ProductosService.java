@@ -34,7 +34,7 @@ public class ProductosService {
         return productosRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Producto no encontrado"));
     }
 
-    public Productos addProducto(Productos producto) {
+    public Productos createProducto(Productos producto) {
         return productosRepository.save(producto);
     }
 

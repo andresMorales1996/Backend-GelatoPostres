@@ -28,8 +28,8 @@ public class ProductosController {
     }
 
     @PostMapping("/createProducto")
-    public Productos addProducto(@RequestBody Productos productos) {
-        return productosService.addProducto(productos);
+    public Productos createProducto(@RequestBody Productos productos) {
+        return productosService.createProducto(productos);
     }
 
     @PutMapping("/updateProducto/{id}")
