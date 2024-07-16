@@ -26,8 +26,8 @@ public class Productos {
   @Column(name = "estado_producto", nullable = false)
   private Boolean estado_producto;
 
-  @Column(name = "imagen_producto", nullable = false)
   @Lob
+  @Column(name = "imagen_producto", nullable = false, length = 100000)
   private byte[] imagen_producto;
 
   @Column(name = "precio_producto", nullable = false)
@@ -45,5 +45,6 @@ public class Productos {
   @ManyToOne
   @JoinColumn(name = "ID_relleno")
   private Rellenos relleno;
+
 
 }

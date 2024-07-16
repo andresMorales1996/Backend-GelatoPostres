@@ -7,7 +7,17 @@ import com.gelato.repositories.ProductosRepository;
 import com.gelato.repositories.RellenosRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.List;
 
 import java.util.List;
 
@@ -37,7 +47,14 @@ public class ProductosService {
   }
 
   // MÉTODO AGREGAR PRODUCTO
-  public Productos createProducto(Productos producto) {
+  public Productos createProducto(Productos producto, MultipartFile file) throws IOException{
+    if (file.isEmpty()) {
+      throw new IllegalArgumentException("Debe seleccionar una imagen para el producto.");
+    }
+
+    byte[] imagenBytes = file.getBytes();
+    producto.setImagen_producto(imagenBytes);
+
     return productosRepository.save(producto);
   }
 
@@ -76,4 +93,6 @@ public class ProductosService {
   public List<Rellenos> getAllRellenos() {
     return rellenosRepository.findAll();
   }
+
+
 }
