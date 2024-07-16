@@ -32,7 +32,7 @@ public class PedidoDetallesService {
   public PedidoDetalles updatePedidoDetalle(Long id, PedidoDetalles pedidoDetalleDetails) {
     PedidoDetalles pedidoDetalle = pedidoDetallesRepository.findById(id).orElse(null);
     if (pedidoDetalle != null) {
-      pedidoDetalle.setCantidad(pedidoDetalleDetails.getCantidad());
+      pedidoDetalle.setCantidad_producto(pedidoDetalleDetails.getCantidad_producto());
       return pedidoDetallesRepository.save(pedidoDetalle);
     }
     return null;
